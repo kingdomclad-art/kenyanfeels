@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenyan Feels - Design that speaks in light and shadow</title>
+    <meta name="description" content="Enamel cups with positive, inspirational messages. Made in Nairobi, designed for the soul.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>KENYAN FEELS</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#valentines">Valentine's ❤️</a>
+                <a href="#collection">Collection</a>
+                <a href="#contact" class="cta-btn">Order Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    Design that speaks in<br>
+                    <span class="gradient-text">light and shadow</span>
+                </h2>
+                <p class="hero-subtitle">Enamel cups crafted with purpose and detail, designed to give your brand and soul a voice</p>
+                <div class="hero-cta">
+                    <a href="#valentines" class="btn btn-primary">Shop Valentine's Edition</a>
+                    <a href="#collection" class="btn btn-secondary">View Collection</a>
+                </div>
+            </div>
+            
+            <!-- Hero Product Showcase -->
+            <div class="hero-products">
+                <div class="product-card floating">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Enamel Cup 1">
+                    </div>
+                </div>
+                <div class="product-card floating delay-1">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=400&h=400&fit=crop" alt="Enamel Cup 2">
+                    </div>
+                </div>
+                <div class="product-card floating delay-2">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=400&h=400&fit=crop" alt="Enamel Cup 3">
+                    </div>
+                </div>
+                <div class="product-card floating delay-3">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop" alt="Enamel Cup 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated Background -->
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+    </section>
+
+    <!-- Valentine's Special Section -->
+    <section id="valentines" class="valentines-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Limited Edition</span>
+                <h2 class="section-title">Valentine's Collection 2026</h2>
+                <p class="section-subtitle">Express your love in Kenyan style. Available until February 14th.</p>
+            </div>
+
+            <div class="valentines-grid">
+                <!-- Valentine Product 1 -->
+                <div class="valentine-card">
+                    <div class="valentine-image">
+                        <span class="badge">New</span>
+                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=600&h=600&fit=crop" alt="My Nairobi Valentine">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="valentine-info">
+                        <h3>My Nairobi Valentine</h3>
+                        <p>Love letter to the city and the one who makes it home</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('My Nairobi Valentine')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valentine Product 2 -->
+                <div class="valentine-card">
+                    <div class="valentine-image">
+                        <span class="badge popular">Popular</span>
+                        <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=600&h=600&fit=crop" alt="Love is a Kenyan Vibe">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="valentine-info">
+                        <h3>Love is a Kenyan Vibe</h3>
+                        <p>Celebrate love with authentic Kenyan energy</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('Love is a Kenyan Vibe')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valentine Product 3 -->
+                <div class="valentine-card">
+                    <div class="valentine-image">
+                        <span class="badge">Couple's Set</span>
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&h=600&fit=crop" alt="Better Together">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="valentine-info">
+                        <h3>Better Together (Set of 2)</h3>
+                        <p>Matching cups with complementary designs</p>
+                        <div class="price-row">
+                            <span class="price"><span class="old-price">KES 2,400</span> KES 2,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('Better Together Couple Set')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valentine Product 4 -->
+                <div class="valentine-card">
+                    <div class="valentine-image">
+                        <span class="badge">Express</span>
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=600&fit=crop" alt="Upendo Halisi">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="valentine-info">
+                        <h3>Upendo Halisi</h3>
+                        <p>True love expressed in Kiswahili poetry</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('Upendo Halisi')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Valentine's Special Offer -->
+            <div class="special-offer">
+                <div class="offer-content">
+                    <h3>🎁 Valentine's Special</h3>
+                    <p>Free gift wrapping on all orders + Express delivery available for Valentine's Day</p>
+                    <ul>
+                        <li>✓ First 10 orders get complimentary gift wrapping</li>
+                        <li>✓ Same-day delivery in Nairobi (order by 2 PM)</li>
+                        <li>✓ Add a personalized message card</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="orderWhatsApp('Valentine Special Inquiry')">Order Valentine's Gift</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="section-title">A simple approach to creative impact</h2>
+                    <p>Kenyan Feels isn't about doing more. It's about doing it right.</p>
+                    <p>Each enamel cup is designed to make your brand and soul stand out. Rooted in purpose and detail, our designs are clear, intuitive, and engaging - crafted to inspire, encourage, and comfort through wearable art.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Original Designs</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Made in Nairobi</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>254</h3>
+                            <p>Kenyan Pride</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=1000&fit=crop" alt="Kenyan Feels Founder">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Collection Section -->
+    <section id="collection" class="collection-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Designs</span>
+                <h2 class="section-title">The Collection</h2>
+                <p class="section-subtitle">Positive messages, Kenyan vibes, pan-African pride</p>
+            </div>
+
+            <!-- Collection Categories -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">All Designs</button>
+                <button class="filter-btn" data-filter="kenyan">Kenyan Pride</button>
+                <button class="filter-btn" data-filter="inspiration">Inspiration</button>
+                <button class="filter-btn" data-filter="love">Love & Joy</button>
+                <button class="filter-btn" data-filter="panafrican">Pan-African</button>
+            </div>
+
+            <div class="collection-grid">
+                <!-- Product 1 -->
+                <div class="collection-card" data-category="kenyan">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Nairobi Hustle">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Nairobi Hustle</h3>
+                        <p class="category-tag">Kenyan Pride</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('Nairobi Hustle')">Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="collection-card" data-category="inspiration">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="You Are Enough">
+                    </div>
+                    <div class="collection-info">
+                        <h3>You Are Enough</h3>
+                        <p class="category-tag">Inspiration</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('You Are Enough')">Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="collection-card" data-category="panafrican">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="African Excellence">
+                    </div>
+                    <div class="collection-info">
+                        <h3>African Excellence</h3>
+                        <p class="category-tag">Pan-African</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('African Excellence')">Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="collection-card" data-category="love">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Spread Love">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Spread Love</h3>
+                        <p class="category-tag">Love & Joy</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('Spread Love')">Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="collection-card" data-category="kenyan">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Hakuna Matata Vibes">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Hakuna Matata Vibes</h3>
+                        <p class="category-tag">Kenyan Pride</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('Hakuna Matata Vibes')">Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="collection-card" data-category="inspiration">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Dream Bigger">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Dream Bigger</h3>
+                        <p class="category-tag">Inspiration</p>
+                        <div class="price-row">
+                            <span class="price">KES 1,200</span>
+                            <button class="btn-cart" onclick="orderWhatsApp('Dream Bigger')">Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-more">
+                <p>More designs dropping soon. Follow us on Instagram @kenyanfeels</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Order Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Ready to order?</h2>
+                <p>Get in touch via WhatsApp and let's bring good vibes to your cup collection.</p>
+                
+                <div class="contact-methods">
+                    <a href="https://wa.me/254700000000?text=Hi%20Kenyan%20Feels!%20I'm%20interested%20in%20ordering" class="contact-card whatsapp" target="_blank">
+                        <div class="icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p>+254 700 000 000</p>
+                        <span class="link-arrow">Chat Now →</span>
+                    </a>
+
+                    <a href="https://instagram.com/kenyanfeels" class="contact-card instagram" target="_blank">
+                        <div class="icon">📸</div>
+                        <h3>Instagram</h3>
+                        <p>@kenyanfeels</p>
+                        <span class="link-arrow">Follow Us →</span>
+                    </a>
+
+                    <div class="contact-card location">
+                        <div class="icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Nairobi, Kenya</p>
+                        <span class="link-arrow">Nairobi Delivery Available</span>
+                    </div>
+                </div>
+
+                <div class="delivery-info">
+                    <h3>Delivery Information</h3>
+                    <ul>
+                        <li>✓ Nairobi: 1-3 business days (KES 200-400)</li>
+                        <li>✓ Valentine's Express: Same-day delivery available</li>
+                        <li>✓ Free delivery on orders over KES 3,000</li>
+                        <li>✓ Nationwide delivery via courier (3-5 business days)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>KENYAN FEELS</h3>
+                    <p>Design that speaks in light and shadow. Enamel cups with soul, made in Nairobi.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#valentines">Valentine's Edition</a></li>
+                        <li><a href="#collection">Collection</a></li>
+                        <li><a href="#contact">Order Now</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://instagram.com/kenyanfeels" target="_blank">Instagram</a></li>
+                        <li><a href="https://wa.me/254700000000" target="_blank">WhatsApp</a></li>
+                        <li><a href="mailto:hello@kenyanfeels.com">Email</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get updates on new designs and exclusive offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kenyan Feels. All rights reserved. Made with ❤️ in Nairobi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
