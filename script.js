@@ -9,47 +9,49 @@ const navLinks = document.querySelector('.nav-links');
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
     });
 
     // Close menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
         });
     });
 }
 
 // ==========================================
-// Product Category Filtering
+// Collection Filtering
 // ==========================================
 
-const filterBtns = document.querySelectorAll('.filter-btn');
-const collectionCards = document.querySelectorAll('.collection-card');
+const tabBtns = document.querySelectorAll('.tab-btn');
+const collectionGroups = document.querySelectorAll('.collection-group');
 
-filterBtns.forEach(btn => {
+tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         // Remove active class from all buttons
-        filterBtns.forEach(b => b.classList.remove('active'));
+        tabBtns.forEach(b => b.classList.remove('active'));
         // Add active class to clicked button
         btn.classList.add('active');
         
-        const filter = btn.getAttribute('data-filter');
+        const collection = btn.getAttribute('data-collection');
         
-        collectionCards.forEach(card => {
-            if (filter === 'all') {
-                card.style.display = 'block';
-                card.style.animation = 'fadeIn 0.5s ease';
+        collectionGroups.forEach(group => {
+            if (collection === 'all') {
+                group.style.display = 'block';
             } else {
-                const category = card.getAttribute('data-category');
-                if (category === filter) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease';
+                const groupCollection = group.getAttribute('data-collection');
+                if (groupCollection === collection) {
+                    group.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    group.style.display = 'none';
                 }
             }
+        });
+
+        // Smooth scroll to shop section after filtering
+        document.querySelector('#shop').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
         });
     });
 });
@@ -59,11 +61,13 @@ filterBtns.forEach(btn => {
 // ==========================================
 
 function orderWhatsApp(productName) {
-    // Replace with your actual WhatsApp number (format: country code + number, no + or spaces)
-    const whatsappNumber = '254700000000'; // REPLACE THIS WITH YOUR ACTUAL NUMBER
+    // IMPORTANT: Replace with your actual WhatsApp number
+    // Format: country code + number (no + or spaces)
+    // Example: 254712345678 for Kenya (+254 712 345678)
+    const whatsappNumber = '254XXXXXXXXX'; // REPLACE THIS
     
     const message = encodeURIComponent(
-        `Hi Kenyan Feels! 👋\n\nI'm interested in ordering:\n📦 ${productName}\n\nCould you please provide more details about:\n- Available designs/colors\n- Delivery timeline\n- Payment options\n\nThank you!`
+        `Hi Kenyan Feels! 👋\n\nI'm interested in ordering:\n📦 ${productName}\n\nCould you please share:\n- Available colors/variations\n- Delivery timeline\n- Payment options\n\nThank you!`
     );
     
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
@@ -83,20 +87,34 @@ if (newsletterForm) {
         
         const emailInput = newsletterForm.querySelector('input[type="email"]');
         const email = emailInput.value;
+        const submitBtn = newsletterForm.querySelector('button');
         
-        // Here you would typically send this to your backend/email service
-        // For now, we'll show a success message
+        // Visual feedback
+        submitBtn.innerHTML = '✓ Joined!';
+        submitBtn.style.background = var(--accent-sage);
         
-        alert(`Thank you for subscribing! 🎉\n\nWe'll send updates to: ${email}`);
-        emailInput.value = '';
+        // Here you would integrate with your email service
+        // For now, just showing success message
         
-        // Optional: Send to Google Sheets or email service
-        // You can integrate with services like EmailJS, Mailchimp API, or Google Sheets
+        setTimeout(() => {
+            alert(`Welcome to the Kenyan Feels circle! 🎉\n\nWe'll send updates to: ${email}`);
+            emailInput.value = '';
+            submitBtn.innerHTML = 'Join Now';
+            submitBtn.style.background = '';
+        }, 1000);
+        
+        // TODO: Integrate with EmailJS, Mailchimp, or your email service
+        // Example with EmailJS:
+        // emailjs.send("service_id", "template_id", {
+        //     to_email: email
+        // }).then(() => {
+        //     // Success handling
+        // });
     });
 }
 
 // ==========================================
-// Smooth Scroll with Offset for Fixed Nav
+// Smooth Scroll with Offset
 // ==========================================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -108,7 +126,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-            const offsetTop = targetElement.offsetTop - 80; // 80px offset for fixed navbar
+            const offsetTop = targetElement.offsetTop - 80;
             
             window.scrollTo({
                 top: offsetTop,
@@ -119,7 +137,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// Intersection Observer for Animations
+// Scroll Animations
 // ==========================================
 
 const observerOptions = {
@@ -127,7 +145,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const fadeInObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -136,16 +154,16 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for fade-in animation
-document.querySelectorAll('.valentine-card, .collection-card, .contact-card').forEach(card => {
+// Observe product cards for fade-in
+document.querySelectorAll('.product-card, .contact-card, .step').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
+    fadeInObserver.observe(card);
 });
 
 // ==========================================
-// Navbar Background on Scroll
+// Navbar Scroll Effect
 // ==========================================
 
 let lastScroll = 0;
@@ -155,192 +173,228 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-        navbar.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.3)';
+        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+        navbar.style.background = 'rgba(245, 243, 239, 0.98)';
     } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.8)';
         navbar.style.boxShadow = 'none';
+        navbar.style.background = 'rgba(245, 243, 239, 0.95)';
     }
     
     lastScroll = currentScroll;
 });
 
 // ==========================================
-// Add to Cart Animation Feedback
+// Order Button Feedback
 // ==========================================
 
-document.querySelectorAll('.btn-cart').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        // Visual feedback
+document.querySelectorAll('.btn-order').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const originalText = this.innerHTML;
         this.innerHTML = '✓ Opening WhatsApp...';
-        this.style.background = '#10b981';
+        this.style.background = '#9CAF88';
         
         setTimeout(() => {
-            this.innerHTML = 'Order Now';
+            this.innerHTML = originalText;
             this.style.background = '';
         }, 2000);
     });
 });
 
 // ==========================================
-// Product Image Lazy Loading Enhancement
+// Update Seasonal Collection Dynamically
 // ==========================================
 
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Fallback for browsers that don't support lazy loading
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
-
-// ==========================================
-// Quick View Modal (Optional Enhancement)
-// ==========================================
-
-const quickViewButtons = document.querySelectorAll('.quick-view');
-
-quickViewButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        // Get product info
-        const card = btn.closest('.valentine-card') || btn.closest('.collection-card');
-        const productName = card.querySelector('h3').textContent;
-        const productPrice = card.querySelector('.price').textContent;
-        const productImage = card.querySelector('img').src;
-        
-        // Open WhatsApp directly with product details
-        orderWhatsApp(productName);
-    });
-});
-
-// ==========================================
-// Social Share Functionality (Optional)
-// ==========================================
-
-function shareProduct(productName, productUrl) {
-    if (navigator.share) {
-        navigator.share({
-            title: `Check out ${productName} from Kenyan Feels`,
-            text: `I found this amazing enamel cup: ${productName}`,
-            url: productUrl || window.location.href
-        }).catch(err => console.log('Error sharing:', err));
-    } else {
-        // Fallback: Copy link to clipboard
-        const tempInput = document.createElement('input');
-        tempInput.value = window.location.href;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-        
-        alert('Link copied to clipboard! 📋');
-    }
-}
-
-// ==========================================
-// Initialize Analytics (Optional - Add your tracking code)
-// ==========================================
-
-// Google Analytics Example (uncomment and add your tracking ID)
-/*
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'YOUR-GA-TRACKING-ID');
-*/
-
-// Facebook Pixel Example (uncomment and add your pixel ID)
-/*
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR-PIXEL-ID');
-fbq('track', 'PageView');
-*/
-
-// ==========================================
-// Performance Optimization - Debounce Scroll
-// ==========================================
-
-function debounce(func, wait = 10, immediate = true) {
-    let timeout;
-    return function() {
-        const context = this, args = arguments;
-        const later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
+function updateSeasonalCollection() {
+    const currentMonth = new Date().getMonth(); // 0-11
+    const seasonalIntro = document.querySelector('[data-collection="seasonal"] .collection-intro');
+    
+    if (!seasonalIntro) return;
+    
+    let seasonalContent = {
+        title: '',
+        description: '',
+        note: ''
     };
+    
+    // March-April: Easter
+    if (currentMonth >= 2 && currentMonth <= 3) {
+        seasonalContent = {
+            title: '🌸 Seasonal Collection - Easter',
+            description: 'Hope. Renewal. New beginnings. Celebrate the season with mugs that carry messages of resurrection, rebirth, and rising again—no matter how many times life knocks you down.',
+            note: 'Limited availability through April'
+        };
+    }
+    // May: Mother's Day
+    else if (currentMonth === 4) {
+        seasonalContent = {
+            title: '💐 Seasonal Collection - Mother\'s Day',
+            description: 'Celebrate the women who shaped us. These mugs carry gratitude, love, and appreciation for the mothers, grandmothers, and mother figures in our lives.',
+            note: 'Limited availability through May'
+        };
+    }
+    // June: Father's Day
+    else if (currentMonth === 5) {
+        seasonalContent = {
+            title: '👔 Seasonal Collection - Father\'s Day',
+            description: 'For the dads, father figures, and men who showed up. Coffee-fueled mornings deserve mugs with messages of appreciation and respect.',
+            note: 'Limited availability through June'
+        };
+    }
+    // August: Kenyan Heritage Month
+    else if (currentMonth === 7) {
+        seasonalContent = {
+            title: '🇰🇪 Seasonal Collection - Heritage Month',
+            description: 'Celebrating Kenya in all its glory. Patriotic designs, cultural pride, and messages that honor our heritage and independence.',
+            note: 'Limited availability through August'
+        };
+    }
+    // November-December: Christmas & New Year
+    else if (currentMonth >= 10 && currentMonth <= 11) {
+        seasonalContent = {
+            title: '🎄 Seasonal Collection - Holidays',
+            description: 'Peace, joy, and new beginnings. Perfect for gift-giving season, these designs celebrate hope, gratitude, and fresh starts.',
+            note: 'Limited availability through December'
+        };
+    }
+    // January: New Year
+    else if (currentMonth === 0) {
+        seasonalContent = {
+            title: '✨ Seasonal Collection - New Year',
+            description: 'Fresh starts. Bold intentions. This year is yours. Mugs that inspire goal-setting, motivation, and becoming the person you want to be.',
+            note: 'Limited availability through January'
+        };
+    }
+    // Default: Seasonal Specials
+    else {
+        seasonalContent = {
+            title: '🌟 Seasonal Collection',
+            description: 'Limited edition designs for this season. Fresh messages, new vibes, and pieces that mark this moment in time.',
+            note: 'Check back often for new seasonal drops'
+        };
+    }
+    
+    // Update the HTML
+    seasonalIntro.querySelector('h3').textContent = seasonalContent.title;
+    seasonalIntro.querySelector('p').textContent = seasonalContent.description;
+    seasonalIntro.querySelector('.collection-note').textContent = seasonalContent.note;
 }
 
-// Apply debounce to scroll event
-window.addEventListener('scroll', debounce(() => {
-    // Your scroll-dependent code here
-}, 15));
+// Run on page load
+updateSeasonalCollection();
 
 // ==========================================
-// Loading Screen (Optional)
+// Seasonal Badge Auto-Update
+// ==========================================
+
+function updateSeasonalBadges() {
+    const currentMonth = new Date().getMonth();
+    const seasonalBadges = document.querySelectorAll('.badge');
+    
+    let badgeText = 'Seasonal';
+    
+    if (currentMonth >= 2 && currentMonth <= 3) badgeText = 'Easter';
+    else if (currentMonth === 4) badgeText = 'Mother\'s Day';
+    else if (currentMonth === 5) badgeText = 'Father\'s Day';
+    else if (currentMonth === 7) badgeText = 'Heritage';
+    else if (currentMonth >= 10 && currentMonth <= 11) badgeText = 'Holiday';
+    else if (currentMonth === 0) badgeText = 'New Year';
+    
+    seasonalBadges.forEach(badge => {
+        if (badge.textContent === 'Easter' || badge.textContent === 'Seasonal') {
+            badge.textContent = badgeText;
+        }
+    });
+}
+
+updateSeasonalBadges();
+
+// ==========================================
+// Loading Animation
 // ==========================================
 
 window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// ==========================================
+// Instagram Grid Hover Effect
+// ==========================================
+
+document.querySelectorAll('.instagram-post').forEach(post => {
+    post.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+    });
     
-    // Trigger entry animations
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.animation = 'fadeInUp 1s ease forwards';
+    post.addEventListener('click', function() {
+        window.open('https://instagram.com/kenyanfeels', '_blank');
+    });
+});
+
+// ==========================================
+// Back to Top (Optional - appears on scroll)
+// ==========================================
+
+// Create back to top button
+const backToTop = document.createElement('button');
+backToTop.innerHTML = '↑';
+backToTop.className = 'back-to-top';
+backToTop.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-terracotta);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(181, 131, 111, 0.3);
+`;
+
+document.body.appendChild(backToTop);
+
+// Show/hide on scroll
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 500) {
+        backToTop.style.opacity = '1';
+        backToTop.style.visibility = 'visible';
+    } else {
+        backToTop.style.opacity = '0';
+        backToTop.style.visibility = 'hidden';
     }
 });
 
-// Add CSS for fadeInUp animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
+// Scroll to top on click
+backToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+backToTop.addEventListener('mouseenter', () => {
+    backToTop.style.transform = 'scale(1.1)';
+});
+
+backToTop.addEventListener('mouseleave', () => {
+    backToTop.style.transform = 'scale(1)';
+});
 
 // ==========================================
-// Console Easter Egg (Optional Fun Touch)
+// Console Message (Fun Easter Egg)
 // ==========================================
 
-console.log('%c👋 Hello there!', 'font-size: 20px; font-weight: bold; color: #ff3366;');
-console.log('%cInterested in how this site was built?', 'font-size: 14px; color: #667eea;');
-console.log('%cReach out to Kenyan Feels - we love connecting with curious minds!', 'font-size: 12px; color: #a0a0a0;');
-
-console.log('%c✨ Designed with love in Nairobi ✨', 'font-size: 12px; font-style: italic; color: #764ba2;');
+console.log('%c👋 Hello there!', 'font-size: 20px; font-weight: bold; color: #B5836F;');
+console.log('%cInterested in how this site was built?', 'font-size: 14px; color: #8B6F47;');
+console.log('%cReach out to hello@kenyanfeels.com', 'font-size: 12px; color: #6B5D4F;');
+console.log('%c✨ Made with love in Nairobi ✨', 'font-size: 12px; font-style: italic; color: #C9A684;');

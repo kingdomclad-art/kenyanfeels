@@ -1,53 +1,90 @@
-# 🎨 Kenyan Feels - E-Commerce Website
+# 🌿 Kenyan Feels - E-Commerce Website
 
-A modern, futuristic e-commerce website for Kenyan Feels - premium enamel cups with positive, inspirational messages. Designed in Nairobi, made for the soul.
+A warm, inviting e-commerce website for **Kenyan Feels** - enamel mugs with messages that inspire, encourage, and comfort. Designed in Nairobi, made for moments that matter.
 
 ![Kenyan Feels](https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=1200&h=400&fit=crop)
 
 ## ✨ Features
 
-- **Futuristic Dark Design** - Modern, clean aesthetic with smooth animations
-- **Valentine's Special Section** - Dedicated section for limited edition Valentine's products
-- **WhatsApp Integration** - Direct ordering through WhatsApp Business
-- **Mobile Responsive** - Fully optimized for all devices
-- **Product Filtering** - Easy category-based product browsing
-- **Smooth Animations** - Engaging user experience with scroll animations
-- **Fast Loading** - Optimized performance with lazy loading images
+- **Warm Earth Tone Design** - Calming beiges, creams, and terracotta colors
+- **6 Dynamic Collections** - Seasonal, Faith, Destination Kenya, Love, Inspiration, Culture
+- **Auto-Updating Seasonal Section** - Changes based on current month
+- **WhatsApp Ordering** - Direct integration for seamless ordering
+- **Mobile Responsive** - Beautiful on all devices
+- **Collection Filtering** - Easy navigation through product categories
+- **Smooth Animations** - Professional scroll effects and transitions
 
-## 🚀 Quick Start
+## 🎨 Design Philosophy
 
-### 1. Clone or Download
+This website is designed to feel like **home** - warm, calm, and welcoming. The color palette draws from Kenya's earth tones:
+- Cream backgrounds (#F5F3EF)
+- Terracotta accents (#B5836F)
+- Warm browns (#8B6F47)
+- Soft sage (#9CAF88)
 
-Download these files to your computer:
+The goal: visitors should want to "hang out" on your site.
+
+## 🚀 Quick Deploy to GitHub Pages
+
+### Step 1: Download Files
+
+Download these 3 files:
 - `index.html`
 - `styles.css`
 - `script.js`
 
-### 2. Customize Your Information
+### Step 2: Update Your Information
 
-**IMPORTANT**: Before deploying, update these details in the files:
+**CRITICAL - Update these before deploying:**
+
+#### In `script.js` (Line 54):
+```javascript
+const whatsappNumber = '254XXXXXXXXX'; // Replace with YOUR number
+```
+**Format:** `254712345678` (country code + number, no + or spaces)
 
 #### In `index.html`:
-- Line 177-178: Replace `254700000000` with your actual WhatsApp number
-- Add your actual product images (replace placeholder Unsplash URLs)
-- Update Instagram handle: `@kenyanfeels` → your actual handle
+- Search for `254XXXXXXXXX` and replace ALL instances with your WhatsApp number
+- Search for `kenyanfeels` and replace with your Instagram handle (if different)
+- Replace `hello@kenyanfeels.com` with your actual email
 
-#### In `script.js`:
-- Line 51: Replace `254700000000` with your WhatsApp number (format: country code + number, no spaces)
+### Step 3: Add Your Product Images
 
-### 3. Deploy to GitHub Pages
+Currently using placeholder images. Replace with your actual product photos:
 
-#### Option A: Using GitHub Desktop (Easiest for Beginners)
+**Method 1: Direct replacement in HTML**
+1. Take photos of your mugs (good lighting, clean background)
+2. Upload to [Imgur](https://imgur.com) or [Cloudinary](https://cloudinary.com)
+3. Copy image URL
+4. In `index.html`, find placeholder URLs like:
+   ```html
+   <img src="https://images.unsplash.com/photo-..." alt="Product">
+   ```
+5. Replace with your image URL:
+   ```html
+   <img src="https://i.imgur.com/YOUR-IMAGE.jpg" alt="Product">
+   ```
 
-1. **Create GitHub Account** (if you don't have one)
-   - Go to [github.com](https://github.com)
-   - Sign up for free
+**Method 2: Local images folder** (recommended)
+1. Create `images` folder in your repository
+2. Add your photos: `images/he-is-risen.jpg`, `images/nairobi-hustle.jpg`, etc.
+3. Update HTML:
+   ```html
+   <img src="images/he-is-risen.jpg" alt="He Is Risen">
+   ```
+
+### Step 4: Deploy to GitHub
+
+#### Using GitHub Desktop (Easiest):
+
+1. **Create GitHub Account** 
+   - Go to [github.com](https://github.com) and sign up
 
 2. **Download GitHub Desktop**
    - Download from [desktop.github.com](https://desktop.github.com)
    - Install and sign in
 
-3. **Create New Repository**
+3. **Create Repository**
    - Open GitHub Desktop
    - Click "File" → "New Repository"
    - Name: `kenyan-feels` (or your preferred name)
@@ -56,125 +93,150 @@ Download these files to your computer:
 
 4. **Add Your Files**
    - Copy `index.html`, `styles.css`, `script.js` into the repository folder
+   - If using local images, also copy the `images` folder
    - Files will appear in GitHub Desktop
 
-5. **Commit and Publish**
+5. **Publish**
    - Write commit message: "Initial website launch"
    - Click "Commit to main"
    - Click "Publish repository"
-   - Uncheck "Keep this code private" if you want it public
+   - Choose "Public" or "Private"
    - Click "Publish Repository"
 
 6. **Enable GitHub Pages**
-   - Go to github.com and find your repository
+   - Go to github.com → your repository
    - Click "Settings" tab
-   - Scroll to "Pages" in left sidebar
+   - Click "Pages" in left sidebar
    - Under "Source", select "main" branch
    - Click "Save"
+   - Wait 2-3 minutes
    - Your site will be live at: `https://yourusername.github.io/kenyan-feels`
 
-#### Option B: Using Git Command Line
+#### Using Git Command Line:
 
 ```bash
-# Initialize git repository
+# Navigate to your project folder
+cd kenyan-feels
+
+# Initialize git
 git init
 
-# Add all files
+# Add files
 git add .
 
-# Commit files
+# Commit
 git commit -m "Initial website launch"
 
-# Create repository on GitHub, then:
+# Create repository on github.com, then:
 git remote add origin https://github.com/yourusername/kenyan-feels.git
 git branch -M main
 git push -u origin main
-
-# Enable GitHub Pages in repository settings
 ```
 
-## 📱 Adding Your Products
+Then enable GitHub Pages in repository settings.
 
-### Replace Placeholder Images
+## 📝 Customizing Your Website
 
-Current placeholders use Unsplash URLs. Replace them with your actual product photos:
+### Update Product Designs
 
-**Method 1: Use Image Hosting**
-1. Upload your product photos to [Imgur](https://imgur.com) or [Cloudinary](https://cloudinary.com)
-2. Copy the image URL
-3. Replace Unsplash URLs in `index.html`
-
-**Method 2: Use Local Images**
-1. Create an `images` folder in your repository
-2. Add your product photos: `images/product1.jpg`, etc.
-3. Update image paths in HTML:
-   ```html
-   <img src="images/my-nairobi-valentine.jpg" alt="My Nairobi Valentine">
-   ```
-
-### Add More Products
-
-Copy this template and customize:
+Each product is a "product-card" block. Find and update:
 
 ```html
-<!-- Valentine Product Template -->
-<div class="valentine-card">
-    <div class="valentine-image">
-        <span class="badge">New</span>
-        <img src="YOUR_IMAGE_URL" alt="Product Name">
-        <div class="quick-view">Quick View</div>
+<div class="product-card">
+    <div class="product-image">
+        <img src="YOUR-IMAGE-URL" alt="YOUR DESIGN NAME">
+        <span class="badge">Category</span> <!-- Optional -->
     </div>
-    <div class="valentine-info">
-        <h3>Your Product Name</h3>
-        <p>Your product description</p>
-        <div class="price-row">
-            <span class="price">KES 1,200</span>
-            <button class="btn-cart" onclick="orderWhatsApp('Your Product Name')">Order Now</button>
+    <div class="product-info">
+        <h4>YOUR DESIGN NAME</h4>
+        <p class="product-desc">Perfect for: YOUR TARGET CUSTOMER</p>
+        <div class="product-meta">
+            <span class="price">KES 1,500</span>
+            <button class="btn-order" onclick="orderWhatsApp('YOUR DESIGN NAME')">Order Now</button>
         </div>
     </div>
 </div>
 ```
 
-## 🎨 Customization Guide
+### Change Your Brand Colors
 
-### Change Brand Colors
-
-In `styles.css`, update the `:root` variables:
+In `styles.css`, find the `:root` section and update:
 
 ```css
 :root {
-    --accent-primary: #ff3366;  /* Main brand color */
-    --accent-secondary: #6366f1; /* Secondary accent */
-    /* Change these to your brand colors */
+    --accent-terracotta: #B5836F;  /* Your primary accent */
+    --accent-brown: #8B6F47;       /* Secondary accent */
+    --accent-sage: #9CAF88;        /* Success/check color */
 }
 ```
 
-### Update Contact Information
+### Add/Remove Collections
 
-**WhatsApp Number:**
-- Format: Country code + number (no + or spaces)
-- Example: `254712345678` for Kenya (+254)
+To add a new collection:
 
-**Social Media Links:**
-- Instagram: Update all `@kenyanfeels` references
-- Add other social platforms in footer section
+1. Add tab button in the collection-tabs section:
+```html
+<button class="tab-btn" data-collection="yourcollection">Your Collection</button>
+```
 
-### Modify Sections
+2. Add collection group:
+```html
+<div class="collection-group" data-collection="yourcollection">
+    <div class="collection-intro">
+        <h3>Your Collection Title</h3>
+        <p>Your description</p>
+    </div>
+    <div class="products-grid">
+        <!-- Add product cards here -->
+    </div>
+</div>
+```
 
-**Hide/Show Sections:**
-- Comment out or delete unwanted sections in `index.html`
-- Each section is clearly labeled with comments
+### Update Pricing
 
-**Reorder Sections:**
-- Cut and paste entire `<section>` blocks to reorder
+Search for `KES 1,500` in `index.html` and replace all instances with your actual price.
 
-## 📊 Analytics Setup (Optional)
+## 🗓️ Seasonal Updates (Auto-Magic!)
+
+The seasonal section **automatically updates** based on the current month:
+
+- **March-April:** Easter Collection
+- **May:** Mother's Day Collection
+- **June:** Father's Day Collection
+- **August:** Kenyan Heritage Month
+- **November-December:** Holiday Collection
+- **January:** New Year Collection
+
+The JavaScript handles this automatically! You just need to:
+
+1. **Update product images** in the Seasonal section to match the current season
+2. **Keep 4 products** in the seasonal section (or adjust the grid)
+
+## 📸 Taking Great Product Photos
+
+**Setup:**
+- Natural light (near window, golden hour)
+- Plain background (white wall, wooden table, beige fabric)
+- Multiple angles per design
+
+**What to shoot:**
+- Front view of mug with design clearly visible
+- Lifestyle shot (mug on desk, in hand, with coffee)
+- Close-up of design details
+- Multiple mugs together (for variety)
+
+**Photo specs:**
+- Minimum 1000px wide
+- JPG format
+- Keep file size under 500KB (use [TinyPNG](https://tinypng.com) to compress)
+
+## 🔧 Adding Features
 
 ### Google Analytics
 
 1. Create account at [analytics.google.com](https://analytics.google.com)
-2. Get your tracking ID (format: `G-XXXXXXXXXX`)
-3. Add to `index.html` before `</head>`:
+2. Get tracking ID (format: `G-XXXXXXXXXX`)
+3. Add before `</head>` in `index.html`:
 
 ```html
 <!-- Google Analytics -->
@@ -187,102 +249,111 @@ In `styles.css`, update the `:root` variables:
 </script>
 ```
 
-### Facebook Pixel (for Ads)
+### Email Newsletter Integration
 
-1. Get pixel ID from [facebook.com/business](https://business.facebook.com)
-2. Uncomment Facebook Pixel code in `script.js`
-3. Replace `YOUR-PIXEL-ID` with actual ID
-
-## 🛒 E-Commerce Next Steps
-
-This site uses WhatsApp for orders (perfect for MVP). To add full e-commerce:
-
-### Month 2: Payment Integration
-
-**Option 1: Pesapal** (Kenya-focused)
-- Supports M-Pesa, Cards, Bank transfers
-- Visit: [pesapal.com](https://www.pesapal.com)
-
-**Option 2: Flutterwave** (Pan-African)
-- Multiple payment methods
-- Visit: [flutterwave.com](https://flutterwave.com)
-
-**Option 3: Shopify**
-- Full e-commerce platform
-- Monthly fee: ~$29
-- Visit: [shopify.com](https://www.shopify.com)
-
-### Email Collection
-
-Use [EmailJS](https://www.emailjs.com) (free tier) to capture newsletter signups:
+Use [EmailJS](https://www.emailjs.com) (free tier):
 
 1. Create EmailJS account
 2. Set up email service
-3. Update newsletter form in `script.js`
+3. In `script.js`, uncomment and update the newsletter integration code
+4. Follow EmailJS documentation for setup
 
-## 📈 SEO Optimization
+## 📱 Mobile Testing
 
-### Add Meta Tags
+Test your site on:
+- iPhone (Safari)
+- Android (Chrome)
+- iPad/Tablet
+- Desktop (Chrome, Firefox, Safari)
 
-Already included in `<head>`, but customize:
+Use Chrome DevTools (F12) to test responsive design.
 
-```html
-<meta name="description" content="Your custom description">
-<meta property="og:image" content="URL to your share image">
+## 🎯 Launch Checklist
+
+Before going live:
+
+- [ ] Replace ALL placeholder images with actual product photos
+- [ ] Update WhatsApp number in `script.js` AND `index.html`
+- [ ] Update email address
+- [ ] Update Instagram handle
+- [ ] Test all "Order Now" buttons
+- [ ] Check seasonal section is current
+- [ ] Test mobile responsiveness
+- [ ] Verify all links work
+- [ ] Proofread all text
+- [ ] Test on different browsers
+- [ ] Get 2-3 friends to test the site
+- [ ] Set up Google Analytics (optional)
+- [ ] Launch! 🎉
+
+## 🔄 Updating Your Site
+
+After initial launch, to update:
+
+**Using GitHub Desktop:**
+1. Make changes to your local files
+2. Open GitHub Desktop
+3. Write commit message (e.g., "Added new Easter designs")
+4. Click "Commit to main"
+5. Click "Push origin"
+6. Changes go live in 2-3 minutes
+
+**Using Git Command Line:**
+```bash
+git add .
+git commit -m "Your update description"
+git push
 ```
 
-### Create `robots.txt`
+## 💡 Tips for Success
 
-```
-User-agent: *
-Allow: /
+**Keep it Updated:**
+- Add new designs monthly
+- Update seasonal section every season
+- Share customer photos (with permission)
+- Post your site link on Instagram bio
 
-Sitemap: https://yourusername.github.io/kenyan-feels/sitemap.xml
-```
+**Performance:**
+- Compress images before uploading
+- Don't use too many high-res photos
+- Keep page load under 3 seconds
 
-### Create `sitemap.xml`
+**Marketing:**
+- Share site link everywhere (Instagram, WhatsApp Status, Facebook)
+- Use site URL in business cards
+- Add to email signatures
+- QR code for physical marketing
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://yourusername.github.io/kenyan-feels/</loc>
-    <lastmod>2026-02-09</lastmod>
-    <priority>1.0</priority>
-  </url>
-</urlset>
-```
+## 🆘 Troubleshooting
 
-## 🔧 Troubleshooting
-
-### Site Not Loading on GitHub Pages
+**Site not loading:**
 - Wait 5-10 minutes after enabling Pages
 - Check repository is public
-- Verify files are in root directory
+- Verify files are in root directory (not in a subfolder)
 
-### Images Not Showing
+**Images not showing:**
 - Check image URLs are correct
-- Use absolute URLs for external images
-- Ensure image files are uploaded to repository
+- If using local images, verify folder name matches
+- Test image URLs in browser
 
-### WhatsApp Button Not Working
-- Verify phone number format (no + or spaces)
+**WhatsApp button not working:**
+- Verify phone number format (254XXXXXXXXX)
 - Test on mobile device
-- Check WhatsApp Business is installed
+- Check number doesn't have + or spaces
 
-### Mobile Menu Not Working
+**Mobile menu not working:**
 - Clear browser cache
-- Check `script.js` is loaded
+- Check `script.js` loaded properly
 - Open browser console (F12) for errors
 
 ## 📞 Support
 
-Need help deploying or customizing? Reach out:
-- **WhatsApp**: +254 700 000 000
-- **Email**: hello@kenyanfeels.com
-- **Instagram**: [@kenyanfeels](https://instagram.com/kenyanfeels)
+Questions? Reach out:
+- **Email:** hello@kenyanfeels.com
+- **WhatsApp:** Your number here
+- **Instagram:** [@kenyanfeels](https://instagram.com/kenyanfeels)
 
-## 📝 License
+## 📄 License
 
 This website is for Kenyan Feels. All rights reserved.
 
@@ -290,23 +361,37 @@ This website is for Kenyan Feels. All rights reserved.
 
 **Built with ❤️ in Nairobi, Kenya**
 
-🚀 Ready to launch? Update your info and deploy!
+Ready to launch? Update your info and go live! 🚀
 
-## 🎯 Launch Checklist
+---
 
-Before going live, complete this checklist:
+## Quick Reference
 
-- [ ] Replace all placeholder images with actual product photos
-- [ ] Update WhatsApp number in both HTML and JS files
-- [ ] Add your actual Instagram handle
-- [ ] Test all "Order Now" buttons
-- [ ] Check mobile responsiveness
-- [ ] Update prices to match your actual pricing
-- [ ] Add your logo (if you have one)
-- [ ] Test newsletter form
-- [ ] Verify all links work
-- [ ] Add Google Analytics (optional)
-- [ ] Review all text for typos
-- [ ] Test website on different devices
-- [ ] Share with friends for feedback
-- [ ] Launch! 🎉
+**Your Website Structure:**
+```
+kenyan-feels/
+├── index.html          (Main website file)
+├── styles.css          (Design & colors)
+├── script.js           (Interactive features)
+├── images/            (Your product photos - create this folder)
+│   ├── product1.jpg
+│   ├── product2.jpg
+│   └── ...
+└── README.md          (This file)
+```
+
+**Key Files to Customize:**
+1. `script.js` → Line 54 (WhatsApp number)
+2. `index.html` → Search "254XXXXXXXXX" (replace all)
+3. `index.html` → Search "kenyanfeels" (replace with your Instagram)
+4. `index.html` → Replace all placeholder image URLs
+
+**Collections in Order:**
+1. Seasonal (auto-updates based on month)
+2. Faith & Spirituality
+3. Destination Kenya
+4. Love & Relationships  
+5. Inspiration & Affirmations
+6. Kenyan Culture & Humor
+
+Good luck with your launch! 🌿✨

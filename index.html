@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenyan Feels - Design that speaks in light and shadow</title>
-    <meta name="description" content="Enamel cups with positive, inspirational messages. Made in Nairobi, designed for the soul.">
+    <title>Kenyan Feels - Enamel Mugs with Soul | Made in Nairobi</title>
+    <meta name="description" content="Enamel mugs that inspire, encourage, and remind you you're exactly where you need to be. Designed in Nairobi, made for moments that matter. KES 1,500.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,11 +13,13 @@
         <div class="container nav-container">
             <div class="logo">
                 <h1>KENYAN FEELS</h1>
+                <span class="tagline">Design with Soul</span>
             </div>
             <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
                 <a href="#about">About</a>
-                <a href="#valentines">Valentine's ❤️</a>
-                <a href="#collection">Collection</a>
+                <a href="#contact">Contact</a>
                 <a href="#contact" class="cta-btn">Order Now</a>
             </div>
             <div class="hamburger">
@@ -29,144 +31,474 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
                 <h2 class="hero-title">
-                    Design that speaks in<br>
-                    <span class="gradient-text">light and shadow</span>
+                    Good vibes. Good design.<br>
+                    <span class="accent-text">Pure Kenyan energy.</span>
                 </h2>
-                <p class="hero-subtitle">Enamel cups crafted with purpose and detail, designed to give your brand and soul a voice</p>
+                <p class="hero-subtitle">Enamel mugs that inspire, encourage, and remind you you're exactly where you need to be.</p>
+                <p class="hero-details">One size. Endless messages. Each piece tells a story—what will yours say?</p>
+                <div class="hero-price">
+                    <span class="price-tag">KES 1,500</span>
+                    <span class="price-detail">Made in Nairobi</span>
+                </div>
                 <div class="hero-cta">
-                    <a href="#valentines" class="btn btn-primary">Shop Valentine's Edition</a>
-                    <a href="#collection" class="btn btn-secondary">View Collection</a>
+                    <a href="#shop" class="btn btn-primary">Shop Collections</a>
+                    <a href="#about" class="btn btn-secondary">Our Story</a>
                 </div>
             </div>
             
-            <!-- Hero Product Showcase -->
-            <div class="hero-products">
-                <div class="product-card floating">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Enamel Cup 1">
-                    </div>
+            <!-- Hero Product Image -->
+            <div class="hero-product">
+                <div class="product-image-main">
+                    <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&h=600&fit=crop" alt="Kenyan Feels Enamel Mug">
                 </div>
-                <div class="product-card floating delay-1">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=400&h=400&fit=crop" alt="Enamel Cup 2">
+                <div class="product-features">
+                    <div class="feature">
+                        <span class="feature-icon">✨</span>
+                        <p>Heavy-gauge enamel</p>
                     </div>
-                </div>
-                <div class="product-card floating delay-2">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=400&h=400&fit=crop" alt="Enamel Cup 3">
+                    <div class="feature">
+                        <span class="feature-icon">☕</span>
+                        <p>Perfect for any beverage</p>
                     </div>
-                </div>
-                <div class="product-card floating delay-3">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop" alt="Enamel Cup 4">
+                    <div class="feature">
+                        <span class="feature-icon">🇰🇪</span>
+                        <p>Designed in Nairobi</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Animated Background -->
-        <div class="hero-bg">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
         </div>
     </section>
 
-    <!-- Valentine's Special Section -->
-    <section id="valentines" class="valentines-section">
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Limited Edition</span>
-                <h2 class="section-title">Valentine's Collection 2026</h2>
-                <p class="section-subtitle">Express your love in Kenyan style. Available until February 14th.</p>
+                <span class="section-tag">Explore</span>
+                <h2 class="section-title">Shop by Collection</h2>
+                <p class="section-subtitle">Find the message your heart needs to hear</p>
             </div>
 
-            <div class="valentines-grid">
-                <!-- Valentine Product 1 -->
-                <div class="valentine-card">
-                    <div class="valentine-image">
-                        <span class="badge">New</span>
-                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=600&h=600&fit=crop" alt="My Nairobi Valentine">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="valentine-info">
-                        <h3>My Nairobi Valentine</h3>
-                        <p>Love letter to the city and the one who makes it home</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('My Nairobi Valentine')">Order Now</button>
-                        </div>
-                    </div>
+            <!-- Collection Tabs -->
+            <div class="collection-tabs">
+                <button class="tab-btn active" data-collection="all">All Mugs</button>
+                <button class="tab-btn" data-collection="seasonal">Seasonal</button>
+                <button class="tab-btn" data-collection="faith">Faith & Spirituality</button>
+                <button class="tab-btn" data-collection="destination">Destination Kenya</button>
+                <button class="tab-btn" data-collection="love">Love & Relationships</button>
+                <button class="tab-btn" data-collection="inspiration">Inspiration</button>
+                <button class="tab-btn" data-collection="culture">Kenyan Culture</button>
+            </div>
+
+            <!-- SEASONAL COLLECTION -->
+            <div class="collection-group" data-collection="seasonal">
+                <div class="collection-intro">
+                    <h3>🌸 Seasonal Collection - Easter</h3>
+                    <p>Hope. Renewal. New beginnings. Celebrate the season with mugs that carry messages of resurrection, rebirth, and rising again.</p>
+                    <span class="collection-note">Limited availability through April</span>
                 </div>
 
-                <!-- Valentine Product 2 -->
-                <div class="valentine-card">
-                    <div class="valentine-image">
-                        <span class="badge popular">Popular</span>
-                        <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=600&h=600&fit=crop" alt="Love is a Kenyan Vibe">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="valentine-info">
-                        <h3>Love is a Kenyan Vibe</h3>
-                        <p>Celebrate love with authentic Kenyan energy</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('Love is a Kenyan Vibe')">Order Now</button>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="He Is Risen">
+                            <span class="badge">Easter</span>
+                        </div>
+                        <div class="product-info">
+                            <h4>He Is Risen</h4>
+                            <p class="product-desc">Perfect for: The believer celebrating resurrection hope</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('He Is Risen')">Order Now</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Valentine Product 3 -->
-                <div class="valentine-card">
-                    <div class="valentine-image">
-                        <span class="badge">Couple's Set</span>
-                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&h=600&fit=crop" alt="Better Together">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="valentine-info">
-                        <h3>Better Together (Set of 2)</h3>
-                        <p>Matching cups with complementary designs</p>
-                        <div class="price-row">
-                            <span class="price"><span class="old-price">KES 2,400</span> KES 2,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('Better Together Couple Set')">Order Now</button>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="New Beginnings">
+                            <span class="badge">Easter</span>
+                        </div>
+                        <div class="product-info">
+                            <h4>New Beginnings</h4>
+                            <p class="product-desc">Perfect for: Anyone ready to start fresh this season</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('New Beginnings')">Order Now</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Valentine Product 4 -->
-                <div class="valentine-card">
-                    <div class="valentine-image">
-                        <span class="badge">Express</span>
-                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=600&fit=crop" alt="Upendo Halisi">
-                        <div class="quick-view">Quick View</div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Rise Again">
+                            <span class="badge">Easter</span>
+                        </div>
+                        <div class="product-info">
+                            <h4>Rise Again</h4>
+                            <p class="product-desc">Perfect for: The comeback in progress</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Rise Again')">Order Now</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="valentine-info">
-                        <h3>Upendo Halisi</h3>
-                        <p>True love expressed in Kiswahili poetry</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('Upendo Halisi')">Order Now</button>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Spring Hope">
+                            <span class="badge">Easter</span>
+                        </div>
+                        <div class="product-info">
+                            <h4>Spring Hope</h4>
+                            <p class="product-desc">Perfect for: The optimist welcoming brighter days</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Spring Hope')">Order Now</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Valentine's Special Offer -->
-            <div class="special-offer">
-                <div class="offer-content">
-                    <h3>🎁 Valentine's Special</h3>
-                    <p>Free gift wrapping on all orders + Express delivery available for Valentine's Day</p>
-                    <ul>
-                        <li>✓ First 10 orders get complimentary gift wrapping</li>
-                        <li>✓ Same-day delivery in Nairobi (order by 2 PM)</li>
-                        <li>✓ Add a personalized message card</li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="orderWhatsApp('Valentine Special Inquiry')">Order Valentine's Gift</button>
+            <!-- FAITH & SPIRITUALITY -->
+            <div class="collection-group" data-collection="faith">
+                <div class="collection-intro">
+                    <h3>🙏 Faith & Spirituality</h3>
+                    <p>Quiet reminders for loud days. When life gets heavy, let your morning mug whisper truth back to you.</p>
                 </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="God is Good">
+                        </div>
+                        <div class="product-info">
+                            <h4>God is Good</h4>
+                            <p class="product-desc">Perfect for: Daily gratitude and faith</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('God is Good')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Blessed & Grateful">
+                        </div>
+                        <div class="product-info">
+                            <h4>Blessed & Grateful</h4>
+                            <p class="product-desc">Perfect for: Counting blessings over coffee</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Blessed & Grateful')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Trust the Journey">
+                        </div>
+                        <div class="product-info">
+                            <h4>Trust the Journey</h4>
+                            <p class="product-desc">Perfect for: The path less traveled</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Trust the Journey')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Faith Over Fear">
+                        </div>
+                        <div class="product-info">
+                            <h4>Faith Over Fear</h4>
+                            <p class="product-desc">Perfect for: Bold steps forward</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Faith Over Fear')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESTINATION KENYA -->
+            <div class="collection-group" data-collection="destination">
+                <div class="collection-intro">
+                    <h3>📍 Destination Kenya</h3>
+                    <p>Home is a feeling. Sometimes it's a city. Rep your corner of Kenya—from Nairobi's hustle to Mombasa's breeze.</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Nairobi Hustle">
+                        </div>
+                        <div class="product-info">
+                            <h4>Nairobi Hustle</h4>
+                            <p class="product-desc">Perfect for: The city dreamer grinding daily</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Nairobi Hustle')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Mombasa Vibes">
+                        </div>
+                        <div class="product-info">
+                            <h4>Mombasa Vibes</h4>
+                            <p class="product-desc">Perfect for: Coastal souls & beach lovers</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Mombasa Vibes')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="254 Forever">
+                        </div>
+                        <div class="product-info">
+                            <h4>254 Forever</h4>
+                            <p class="product-desc">Perfect for: Kenyan pride, home & abroad</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('254 Forever')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Nakuru Love">
+                        </div>
+                        <div class="product-info">
+                            <h4>Nakuru Love</h4>
+                            <p class="product-desc">Perfect for: Lake lovers & flamingo watchers</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Nakuru Love')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOVE & RELATIONSHIPS -->
+            <div class="collection-group" data-collection="love">
+                <div class="collection-intro">
+                    <h3>💕 Love & Relationships</h3>
+                    <p>For the love that feels like home. Romantic connections, soul friendships, chosen family, and self-love.</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Better Together">
+                        </div>
+                        <div class="product-info">
+                            <h4>Better Together</h4>
+                            <p class="product-desc">Perfect for: Partnerships that make life sweeter</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Better Together')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="You Are Loved">
+                        </div>
+                        <div class="product-info">
+                            <h4>You Are Loved</h4>
+                            <p class="product-desc">Perfect for: Gentle reminders of worthiness</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('You Are Loved')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="My Person">
+                        </div>
+                        <div class="product-info">
+                            <h4>My Person</h4>
+                            <p class="product-desc">Perfect for: The one who gets you</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('My Person')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Self-Love Club">
+                        </div>
+                        <div class="product-info">
+                            <h4>Self-Love Club</h4>
+                            <p class="product-desc">Perfect for: Your healing journey</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Self-Love Club')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSPIRATION -->
+            <div class="collection-group" data-collection="inspiration">
+                <div class="collection-intro">
+                    <h3>✨ Inspiration & Affirmations</h3>
+                    <p>Daily motivation for the grind. Career moves, mental health check-ins, growth mindset reminders.</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="You've Got This">
+                        </div>
+                        <div class="product-info">
+                            <h4>You've Got This</h4>
+                            <p class="product-desc">Perfect for: Monday mornings & hard conversations</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('You've Got This')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Dream Builder">
+                        </div>
+                        <div class="product-info">
+                            <h4>Dream Builder</h4>
+                            <p class="product-desc">Perfect for: The entrepreneur's hustle</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Dream Builder')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Rest Without Guilt">
+                        </div>
+                        <div class="product-info">
+                            <h4>Rest Without Guilt</h4>
+                            <p class="product-desc">Perfect for: Permission to pause</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Rest Without Guilt')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Progress Over Perfection">
+                        </div>
+                        <div class="product-info">
+                            <h4>Progress Over Perfection</h4>
+                            <p class="product-desc">Perfect for: The recovering perfectionist</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Progress Over Perfection')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KENYAN CULTURE -->
+            <div class="collection-group" data-collection="culture">
+                <div class="collection-intro">
+                    <h3>🇰🇪 Kenyan Culture & Humor</h3>
+                    <p>Sheng, matatu wisdom, chai culture, and inside jokes only Kenyans truly get.</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Chai is Life">
+                        </div>
+                        <div class="product-info">
+                            <h4>Chai is Life</h4>
+                            <p class="product-desc">Perfect for: The Kenyan tea ritual</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Chai is Life')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Poa Vibes Only">
+                        </div>
+                        <div class="product-info">
+                            <h4>Poa Vibes Only</h4>
+                            <p class="product-desc">Perfect for: Keeping it chill, Kenyan style</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Poa Vibes Only')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Matatu Wisdom">
+                        </div>
+                        <div class="product-info">
+                            <h4>Matatu Wisdom</h4>
+                            <p class="product-desc">Perfect for: Life lessons from the 14-seater</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Matatu Wisdom')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Hakuna Matata Vibes">
+                        </div>
+                        <div class="product-info">
+                            <h4>Hakuna Matata Vibes</h4>
+                            <p class="product-desc">Perfect for: Stress-free living</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Hakuna Matata Vibes')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulk Orders CTA -->
+            <div class="bulk-order-cta">
+                <h3>Need more than one?</h3>
+                <p>Corporate gifts, weddings, events? We've got you.<br>Bulk discounts available for 10+ mugs.</p>
+                <button class="btn btn-primary" onclick="orderWhatsApp('Bulk Order Inquiry')">Get Custom Quote</button>
             </div>
         </div>
     </section>
@@ -175,190 +507,154 @@
     <section id="about" class="about-section">
         <div class="container">
             <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop" alt="Anne - Founder">
+                </div>
+
                 <div class="about-content">
                     <span class="section-tag">Our Story</span>
-                    <h2 class="section-title">A simple approach to creative impact</h2>
-                    <p>Kenyan Feels isn't about doing more. It's about doing it right.</p>
-                    <p>Each enamel cup is designed to make your brand and soul stand out. Rooted in purpose and detail, our designs are clear, intuitive, and engaging - crafted to inspire, encourage, and comfort through wearable art.</p>
+                    <h2 class="section-title">Why Every Mug Matters</h2>
                     
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <h3>50+</h3>
-                            <p>Original Designs</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>100%</h3>
-                            <p>Made in Nairobi</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>254</h3>
-                            <p>Kenyan Pride</p>
-                        </div>
-                    </div>
-                </div>
+                    <div class="about-text">
+                        <p>In a world that constantly tells you to hustle harder, we're here to remind you: <strong>you're already enough.</strong></p>
 
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=1000&fit=crop" alt="Kenyan Feels Founder">
+                        <p>I'm Anne. After years in school operations—building systems, understanding people, creating environments that work—I realized my heart was pulling me somewhere else. Toward creating. Toward design. Toward pieces that speak to the soul.</p>
+
+                        <p>Kenyan Feels started with a simple question: <em>What if the mug you drink from every morning could change your day?</em></p>
+
+                        <p>These aren't just mugs. They're daily affirmations in your hand. Kenyan pride on your desk. Conversation starters over chai. Reminders that you matter.</p>
+
+                        <p>Every design is original. Every mug is made in Nairobi. Every purchase supports a creative ecosystem that believes Kenya has stories worth telling.</p>
+
+                        <p>Whether you're buying for yourself or gifting someone who needs to hear they're loved, valued, or simply enough—welcome to Kenyan Feels.</p>
+
+                        <p><strong>Let's make your everyday a little more extraordinary.</strong></p>
+                    </div>
+
+                    <div class="about-signature">
+                        <p class="signature-name">— Anne</p>
+                        <p class="signature-title">Founder & Creative Director, Nairobi</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Collection Section -->
-    <section id="collection" class="collection-section">
+    <!-- How to Order Section -->
+    <section id="contact" class="order-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Our Designs</span>
-                <h2 class="section-title">The Collection</h2>
-                <p class="section-subtitle">Positive messages, Kenyan vibes, pan-African pride</p>
+                <span class="section-tag">Let's Make It Yours</span>
+                <h2 class="section-title">Ordering is Simple</h2>
+                <p class="section-subtitle">Because life's complicated enough</p>
             </div>
 
-            <!-- Collection Categories -->
-            <div class="category-filters">
-                <button class="filter-btn active" data-filter="all">All Designs</button>
-                <button class="filter-btn" data-filter="kenyan">Kenyan Pride</button>
-                <button class="filter-btn" data-filter="inspiration">Inspiration</button>
-                <button class="filter-btn" data-filter="love">Love & Joy</button>
-                <button class="filter-btn" data-filter="panafrican">Pan-African</button>
-            </div>
-
-            <div class="collection-grid">
-                <!-- Product 1 -->
-                <div class="collection-card" data-category="kenyan">
-                    <div class="collection-image">
-                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Nairobi Hustle">
-                    </div>
-                    <div class="collection-info">
-                        <h3>Nairobi Hustle</h3>
-                        <p class="category-tag">Kenyan Pride</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('Nairobi Hustle')">Order</button>
-                        </div>
-                    </div>
+            <div class="order-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Design</h3>
+                    <p>Click "Order Now" on any design above</p>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="collection-card" data-category="inspiration">
-                    <div class="collection-image">
-                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="You Are Enough">
-                    </div>
-                    <div class="collection-info">
-                        <h3>You Are Enough</h3>
-                        <p class="category-tag">Inspiration</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('You Are Enough')">Order</button>
-                        </div>
-                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Confirm Details</h3>
+                    <p>We'll chat via WhatsApp</p>
                 </div>
-
-                <!-- Product 3 -->
-                <div class="collection-card" data-category="panafrican">
-                    <div class="collection-image">
-                        <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="African Excellence">
-                    </div>
-                    <div class="collection-info">
-                        <h3>African Excellence</h3>
-                        <p class="category-tag">Pan-African</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('African Excellence')">Order</button>
-                        </div>
-                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Pay Securely</h3>
+                    <p>M-Pesa or bank transfer</p>
                 </div>
-
-                <!-- Product 4 -->
-                <div class="collection-card" data-category="love">
-                    <div class="collection-image">
-                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Spread Love">
-                    </div>
-                    <div class="collection-info">
-                        <h3>Spread Love</h3>
-                        <p class="category-tag">Love & Joy</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('Spread Love')">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="collection-card" data-category="kenyan">
-                    <div class="collection-image">
-                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Hakuna Matata Vibes">
-                    </div>
-                    <div class="collection-info">
-                        <h3>Hakuna Matata Vibes</h3>
-                        <p class="category-tag">Kenyan Pride</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('Hakuna Matata Vibes')">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="collection-card" data-category="inspiration">
-                    <div class="collection-image">
-                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Dream Bigger">
-                    </div>
-                    <div class="collection-info">
-                        <h3>Dream Bigger</h3>
-                        <p class="category-tag">Inspiration</p>
-                        <div class="price-row">
-                            <span class="price">KES 1,200</span>
-                            <button class="btn-cart" onclick="orderWhatsApp('Dream Bigger')">Order</button>
-                        </div>
-                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Receive & Enjoy</h3>
+                    <p>Arrives in 3-5 business days</p>
                 </div>
             </div>
 
-            <div class="view-more">
-                <p>More designs dropping soon. Follow us on Instagram @kenyanfeels</p>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>WhatsApp</h3>
+                    <p class="contact-detail">+254 XXX XXX XXX</p>
+                    <a href="https://wa.me/254XXXXXXXXX?text=Hi%20Kenyan%20Feels!%20I'm%20interested%20in%20ordering" class="contact-link" target="_blank">Start Your Order →</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p class="contact-detail">hello@kenyanfeels.com</p>
+                    <a href="mailto:hello@kenyanfeels.com" class="contact-link">Send Message →</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p class="contact-detail">Nairobi, Kenya</p>
+                    <p class="contact-link">Delivering Good Vibes Nationwide</p>
+                </div>
+            </div>
+
+            <div class="delivery-info-box">
+                <h3>Delivery Information</h3>
+                <div class="delivery-grid">
+                    <div class="delivery-item">
+                        <span class="check">✓</span>
+                        <p><strong>Nairobi:</strong> 2-3 business days (KES 250)</p>
+                    </div>
+                    <div class="delivery-item">
+                        <span class="check">✓</span>
+                        <p><strong>Major Towns:</strong> 3-5 business days (KES 350)</p>
+                    </div>
+                    <div class="delivery-item">
+                        <span class="check">✓</span>
+                        <p><strong>Free Delivery:</strong> On 3+ mugs (Nairobi only)</p>
+                    </div>
+                    <div class="delivery-item">
+                        <span class="check">✓</span>
+                        <p><strong>Quality Guarantee:</strong> Damaged? We replace immediately</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact/Order Section -->
-    <section id="contact" class="contact-section">
+    <!-- Instagram Section -->
+    <section class="instagram-section">
         <div class="container">
-            <div class="contact-content">
-                <h2>Ready to order?</h2>
-                <p>Get in touch via WhatsApp and let's bring good vibes to your cup collection.</p>
-                
-                <div class="contact-methods">
-                    <a href="https://wa.me/254700000000?text=Hi%20Kenyan%20Feels!%20I'm%20interested%20in%20ordering" class="contact-card whatsapp" target="_blank">
-                        <div class="icon">📱</div>
-                        <h3>WhatsApp</h3>
-                        <p>+254 700 000 000</p>
-                        <span class="link-arrow">Chat Now →</span>
-                    </a>
-
-                    <a href="https://instagram.com/kenyanfeels" class="contact-card instagram" target="_blank">
-                        <div class="icon">📸</div>
-                        <h3>Instagram</h3>
-                        <p>@kenyanfeels</p>
-                        <span class="link-arrow">Follow Us →</span>
-                    </a>
-
-                    <div class="contact-card location">
-                        <div class="icon">📍</div>
-                        <h3>Location</h3>
-                        <p>Nairobi, Kenya</p>
-                        <span class="link-arrow">Nairobi Delivery Available</span>
-                    </div>
+            <h2>Follow Us on Instagram</h2>
+            <p class="instagram-subtitle">See our mugs in real life & customer love</p>
+            
+            <div class="instagram-grid">
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Instagram">
                 </div>
-
-                <div class="delivery-info">
-                    <h3>Delivery Information</h3>
-                    <ul>
-                        <li>✓ Nairobi: 1-3 business days (KES 200-400)</li>
-                        <li>✓ Valentine's Express: Same-day delivery available</li>
-                        <li>✓ Free delivery on orders over KES 3,000</li>
-                        <li>✓ Nationwide delivery via courier (3-5 business days)</li>
-                    </ul>
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=400&h=400&fit=crop" alt="Instagram">
                 </div>
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=400&h=400&fit=crop" alt="Instagram">
+                </div>
+                <div class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop" alt="Instagram">
+                </div>
+            </div>
+
+            <a href="https://instagram.com/kenyanfeels" class="btn btn-secondary instagram-btn" target="_blank">Follow @kenyanfeels</a>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join the Circle</h2>
+                <p>Be first to see new designs & seasonal drops</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Join Now</button>
+                </form>
+                <p class="newsletter-note">We respect your inbox. No spam, just good vibes.</p>
             </div>
         </div>
     </section>
@@ -369,16 +665,28 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>KENYAN FEELS</h3>
-                    <p>Design that speaks in light and shadow. Enamel cups with soul, made in Nairobi.</p>
+                    <p class="footer-tagline">Design with Soul</p>
+                    <p>Enamel mugs that inspire, encourage, and remind you you're exactly where you need to be.</p>
+                    <p class="footer-made">Made with ❤️ in Nairobi</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#valentines">Valentine's Edition</a></li>
-                        <li><a href="#collection">Collection</a></li>
-                        <li><a href="#contact">Order Now</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="#shop">Seasonal</a></li>
+                        <li><a href="#shop">Faith & Spirituality</a></li>
+                        <li><a href="#shop">Destination Kenya</a></li>
+                        <li><a href="#shop">Inspiration</a></li>
                     </ul>
                 </div>
 
@@ -386,23 +694,15 @@
                     <h4>Connect</h4>
                     <ul>
                         <li><a href="https://instagram.com/kenyanfeels" target="_blank">Instagram</a></li>
-                        <li><a href="https://wa.me/254700000000" target="_blank">WhatsApp</a></li>
+                        <li><a href="https://wa.me/254XXXXXXXXX" target="_blank">WhatsApp</a></li>
                         <li><a href="mailto:hello@kenyanfeels.com">Email</a></li>
                     </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Get updates on new designs and exclusive offers</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Kenyan Feels. All rights reserved. Made with ❤️ in Nairobi.</p>
+                <p>&copy; 2026 Kenyan Feels. All rights reserved.</p>
+                <p class="footer-note">Every mug tells a story. What will yours say?</p>
             </div>
         </div>
     </footer>
