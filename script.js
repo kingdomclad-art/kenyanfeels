@@ -61,9 +61,10 @@ tabBtns.forEach(btn => {
 // ==========================================
 
 function orderWhatsApp(productName) {
-    // Your actual WhatsApp number
+    // IMPORTANT: Replace with your actual WhatsApp number
     // Format: country code + number (no + or spaces)
-    const whatsappNumber = '254729945471';
+    // Example: 254712345678 for Kenya (+254 712 345678)
+    const whatsappNumber = '254XXXXXXXXX'; // REPLACE THIS
     
     const message = encodeURIComponent(
         `Hi Kenyan Feels! 👋\n\nI'm interested in ordering:\n📦 ${productName}\n\nCould you please share:\n- Available colors/variations\n- Delivery timeline\n- Payment options\n\nThank you!`
