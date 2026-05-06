@@ -3,11 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenyan Feels - Enamel Mugs with Soul | Made in Nairobi</title>
-    <meta name="description" content="Enamel mugs that inspire, encourage, and remind you you're exactly where you need to be. Designed in Nairobi, made for moments that matter.">
+    <title>Kenyan Feels – Mugs with a Message | Nairobi Made</title>
+    <meta name="description" content="Enamel and ceramic mugs carrying Kenyan stories, languages, and soul. Designed in Nairobi. For Kenyans and lovers of Kenya everywhere.">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* =============================================
+           KENYAN FEELS – ADDITIONAL COMPONENTS
+           Extends styles.css without overriding it
+        ============================================= */
+
+        .mission-band {
+            background: var(--accent-sage);
+            text-align: center;
+            padding: 1.6rem 2rem;
+        }
+        .mission-band p {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-style: italic;
+            color: var(--text-primary);
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-brown);
+            border: 1px solid var(--accent-warm);
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .mug-type-selector {
+            padding: var(--spacing-lg) 0;
+            background: var(--bg-warm);
+        }
+        .mug-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .mug-type-card {
+            background: var(--bg-card);
+            border: 2px solid var(--bg-darker);
+            border-radius: 12px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+        }
+        .mug-type-card:hover,
+        .mug-type-card.active {
+            border-color: var(--accent-terracotta);
+            box-shadow: 0 8px 30px rgba(181, 131, 111, 0.15);
+        }
+        .mug-type-card.active::after {
+            content: 'Selected';
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            font-size: 0.7rem;
+            color: var(--accent-terracotta);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .mug-type-icon {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .mug-type-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+            font-weight: 400;
+        }
+        .mug-type-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+        .mug-type-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-terracotta);
+        }
+
+        .collection-intro {
+            border-left: 4px solid var(--accent-terracotta);
+            padding: 1.2rem 1.5rem;
+            background: var(--bg-cream);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        .collection-intro h3 {
+            font-size: 1.4rem;
+            font-family: var(--font-display);
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .collection-intro p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .collection-note {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.82rem;
+            color: var(--accent-terracotta);
+            font-style: italic;
+        }
+
+        .collection-group {
+            display: none;
+            margin-bottom: var(--spacing-xl);
+        }
+        .collection-group.visible {
+            display: block;
+        }
+
+        .about-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.8rem 0;
+        }
+        .pillar {
+            border-left: 3px solid var(--accent-terracotta);
+            padding: 0.9rem 1.1rem;
+            background: var(--bg-warm);
+            border-radius: 0 6px 6px 0;
+        }
+        .pillar h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+        .pillar p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .diaspora-band {
+            background: var(--accent-terracotta);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        .diaspora-band h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        .diaspora-band p {
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+            color: rgba(255,255,255,0.88);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+        .diaspora-band .btn-secondary {
+            border-color: rgba(255,255,255,0.6);
+            color: white;
+        }
+        .diaspora-band .btn-secondary:hover {
+            background: white;
+            color: var(--accent-terracotta);
+        }
+
+        .popups-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--bg-warm);
+        }
+        .popup-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .popup-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--bg-darker);
+            border-top: 4px solid var(--accent-sage);
+            transition: all var(--transition);
+        }
+        .popup-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+        .popup-date {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-sage);
+            margin-bottom: 0.5rem;
+        }
+        .popup-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+        .popup-location {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .popup-time {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-terracotta);
+        }
+        .no-popups {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-secondary);
+        }
+        .no-popups .coming-soon {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+        .popup-cta-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .popup-cta-note a {
+            color: var(--accent-terracotta);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .popup-cta-note a:hover { color: var(--accent-brown); }
+
+        .order-section { background: var(--bg-cream); }
+
+        .delivery-item strong { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .mug-types { grid-template-columns: 1fr; }
+            .about-pillars { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -18,14 +283,13 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#shop">Shop</a>
-                <a href="#about">About</a>
+                <a href="#popups">Events</a>
+                <a href="#about">Our Story</a>
                 <a href="#contact">Contact</a>
                 <a href="#contact" class="cta-btn">Order Now</a>
             </div>
             <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
@@ -34,37 +298,66 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2 class="hero-title">
-                    Good vibes. Good design.<br>
-                    <span class="accent-text">Pure Kenyan energy.</span>
-                </h2>
-                <p class="hero-subtitle">Enamel mugs that inspire, encourage, and remind you you're exactly where you need to be.</p>
-                <p class="hero-details">One size. Endless messages. Each piece tells a story. What will yours say?</p>
-                </div>
+                <span class="hero-eyebrow">Designed in Nairobi &middot; For Kenyans and lovers of Kenya</span>
+                <h1 class="hero-title">
+                    Our culture.<br>
+                    Our words.<br>
+                    <span class="accent-text">Our mugs.</span>
+                </h1>
+                <p class="hero-subtitle">Enamel and ceramic mugs carrying Kenyan stories, languages, and soul, because our world view deserves to be seen.</p>
+                <p class="hero-details">Inspiration, humour, love, and pride. Sip by sip.</p>
                 <div class="hero-cta">
                     <a href="#shop" class="btn btn-primary">Shop Collections</a>
                     <a href="#about" class="btn btn-secondary">Our Story</a>
                 </div>
             </div>
-            
-            <!-- Hero Product Image -->
             <div class="hero-product">
                 <div class="product-image-main">
                     <img src="assets/Furahia%20Kenya%20with%20Mandazi.png" alt="Kenyan Feels Enamel Mug">
                 </div>
                 <div class="product-features">
                     <div class="feature">
-                        <span class="feature-icon">✨</span>
+                        <span class="feature-icon">🏺</span>
                         <p>Heavy-gauge enamel</p>
                     </div>
                     <div class="feature">
                         <span class="feature-icon">☕</span>
-                        <p>Perfect for any beverage</p>
+                        <p>Ceramic option available</p>
                     </div>
                     <div class="feature">
                         <span class="feature-icon">🇰🇪</span>
                         <p>Designed in Nairobi</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Band -->
+    <div class="mission-band">
+        <p>"What is authentically ours deserves to be seen, named, and celebrated, by us first."</p>
+    </div>
+
+    <!-- Mug Type Selector -->
+    <section class="mug-type-selector">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Choose Your Cup</span>
+                <h2 class="section-title">Two ways to carry the feeling</h2>
+                <p class="section-subtitle">Every design is available in both enamel and ceramic. Pick what suits your morning ritual.</p>
+            </div>
+            <div class="mug-types">
+                <div class="mug-type-card">
+                    <span class="mug-type-icon">🏺</span>
+                    <h3>Enamel Mug</h3>
+                    <p>Rugged, nostalgic, and built to last. The classic choice, whether you are at the office, on a hike, or making that first cup at home. Reminiscent of old Kenya and enduring like the stories we carry.</p>
+                    <span class="mug-type-badge">KES 1,500</span>
+                </div>
+                <div class="mug-type-card">
+                    <span class="mug-type-icon">☕</span>
+                    <h3>Ceramic Mug</h3>
+                    <p>Smooth, satisfying, and perfect for the daily chai ritual most of us hold sacred. For those who prefer the feel of ceramic in their hands. All the same great designs, a different kind of warmth.</p>
+                    <span class="mug-type-badge">KES 1,500</span>
                 </div>
             </div>
         </div>
@@ -76,98 +369,25 @@
             <div class="section-header">
                 <span class="section-tag">Explore</span>
                 <h2 class="section-title">Shop by Collection</h2>
-                <p class="section-subtitle">Find the message your heart needs to hear</p>
+                <p class="section-subtitle">Find the message your heart needs to hear today</p>
             </div>
 
-            <!-- Collection Tabs -->
             <div class="collection-tabs">
-                <button class="tab-btn active" data-collection="all">All Mugs</button>
-                <button class="tab-btn" data-collection="seasonal">Seasonal</button>
-                <button class="tab-btn" data-collection="faith">Faith & Spirituality</button>
+                <button class="tab-btn active" data-collection="all">All Designs</button>
+                <button class="tab-btn" data-collection="faith">Faith &amp; Spirituality</button>
                 <button class="tab-btn" data-collection="destination">Destination Kenya</button>
-                <button class="tab-btn" data-collection="love">Love & Relationships</button>
+                <button class="tab-btn" data-collection="love">Love &amp; Relationships</button>
                 <button class="tab-btn" data-collection="inspiration">Inspiration</button>
                 <button class="tab-btn" data-collection="culture">Kenyan Culture</button>
-            </div>
-
-            <!-- SEASONAL COLLECTION -->
-            <div class="collection-group" data-collection="seasonal">
-                <div class="collection-intro">
-                    <h3>🌸 Seasonal Collection: Easter</h3>
-                    <p>Hope. Renewal. New beginnings. Celebrate the season with mugs that carry messages of resurrection, rebirth, and rising again.</p>
-                    <span class="collection-note">Limited availability through April</span>
-                </div>
-
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="He Is Risen">
-                            <span class="badge">Easter</span>
-                        </div>
-                        <div class="product-info">
-                            <h4>He Is Risen</h4>
-                            <p class="product-desc">Perfect for: The believer celebrating resurrection hope</p>
-                            <div class="product-meta">
-                                <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('He Is Risen')">Order Now</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="New Beginnings">
-                            <span class="badge">Easter</span>
-                        </div>
-                        <div class="product-info">
-                            <h4>New Beginnings</h4>
-                            <p class="product-desc">Perfect for: Anyone ready to start fresh this season</p>
-                            <div class="product-meta">
-                                <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('New Beginnings')">Order Now</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Rise Again">
-                            <span class="badge">Easter</span>
-                        </div>
-                        <div class="product-info">
-                            <h4>Rise Again</h4>
-                            <p class="product-desc">Perfect for: The comeback in progress</p>
-                            <div class="product-meta">
-                                <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('Rise Again')">Order Now</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Spring Hope">
-                            <span class="badge">Easter</span>
-                        </div>
-                        <div class="product-info">
-                            <h4>Spring Hope</h4>
-                            <p class="product-desc">Perfect for: The optimist welcoming brighter days</p>
-                            <div class="product-meta">
-                                <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('Spring Hope')">Order Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="tab-btn" data-collection="language">Our Languages</button>
             </div>
 
             <!-- FAITH & SPIRITUALITY -->
             <div class="collection-group" data-collection="faith">
                 <div class="collection-intro">
-                    <h3>🙏 Faith & Spirituality</h3>
-                    <p>Quiet reminders for loud days. When life gets heavy, let your morning mug whisper truth back to you.</p>
+                    <h3>🙏 Faith &amp; Spirituality</h3>
+                    <p>Quiet reminders for loud days. When life gets heavy, let your morning mug whisper truth back to you. Faith is woven into our everyday, and this collection holds that.</p>
                 </div>
-
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -175,49 +395,46 @@
                         </div>
                         <div class="product-info">
                             <h4>God is Good</h4>
-                            <p class="product-desc">Perfect for: Daily gratitude and faith</p>
+                            <p class="product-desc">For daily gratitude and faith</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('God is Good')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Blessed & Grateful">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Blessed and Grateful">
                         </div>
                         <div class="product-info">
-                            <h4>Blessed & Grateful</h4>
-                            <p class="product-desc">Perfect for: Counting blessings over coffee</p>
+                            <h4>Blessed &amp; Grateful</h4>
+                            <p class="product-desc">For counting blessings over your morning chai</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('Blessed & Grateful')">Order Now</button>
+                                <button class="btn-order" onclick="orderWhatsApp('Blessed and Grateful')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Trust the Journey">
                         </div>
                         <div class="product-info">
                             <h4>Trust the Journey</h4>
-                            <p class="product-desc">Perfect for: The path less traveled</p>
+                            <p class="product-desc">For navigating the path less expected</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Trust the Journey')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Faith Over Fear">
                         </div>
                         <div class="product-info">
                             <h4>Faith Over Fear</h4>
-                            <p class="product-desc">Perfect for: Bold steps forward</p>
+                            <p class="product-desc">For the bold step you have been putting off</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Faith Over Fear')">Order Now</button>
@@ -231,9 +448,8 @@
             <div class="collection-group" data-collection="destination">
                 <div class="collection-intro">
                     <h3>📍 Destination Kenya</h3>
-                    <p>Home is a feeling. Sometimes it's a city. Rep your corner of Kenya—from Nairobi's hustle to Mombasa's breeze.</p>
+                    <p>Home is a feeling. Sometimes it is a city, a coast, a hill. Rep your corner of Kenya, from Nairobi's relentless energy to Mombasa's salt-air ease. For the ones here and the ones who are away.</p>
                 </div>
-
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -241,49 +457,46 @@
                         </div>
                         <div class="product-info">
                             <h4>Nairobi Hustle</h4>
-                            <p class="product-desc">Perfect for: The city dreamer grinding daily</p>
+                            <p class="product-desc">For the city dreamer grinding daily</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Nairobi Hustle')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Mombasa Vibes">
                         </div>
                         <div class="product-info">
                             <h4>Mombasa Vibes</h4>
-                            <p class="product-desc">Perfect for: Coastal souls & beach lovers</p>
+                            <p class="product-desc">For coastal souls and beach lovers</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Mombasa Vibes')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="assets/Furahia%20Kenya%20-%20Brit%20Tea.png" alt="Furahia Kenya">
                         </div>
                         <div class="product-info">
                             <h4>Furahia Kenya</h4>
-                            <p class="product-desc">Perfect for: Kenyan pride, home & abroad</p>
+                            <p class="product-desc">For Kenyan pride, home or away</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Furahia Kenya')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Nakuru Love">
                         </div>
                         <div class="product-info">
                             <h4>Nakuru Love</h4>
-                            <p class="product-desc">Perfect for: Lake lovers & flamingo watchers</p>
+                            <p class="product-desc">For lake lovers and flamingo watchers</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Nakuru Love')">Order Now</button>
@@ -296,10 +509,9 @@
             <!-- LOVE & RELATIONSHIPS -->
             <div class="collection-group" data-collection="love">
                 <div class="collection-intro">
-                    <h3>💕 Love & Relationships</h3>
-                    <p>For the love that feels like home. Romantic connections, soul friendships, chosen family, and self-love.</p>
+                    <h3>💕 Love &amp; Relationships</h3>
+                    <p>For the love that feels like home. Romantic connections, deep friendships, and the love you give yourself, all said the Kenyan way.</p>
                 </div>
-
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -307,52 +519,49 @@
                         </div>
                         <div class="product-info">
                             <h4>Nakupenda</h4>
-                            <p class="product-desc">Perfect for: The one you just can't stop thinking about</p>
+                            <p class="product-desc">For the one you cannot stop thinking about</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Nakupenda')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="assets/Two%20Hearts%20Love.png" alt="Happy Hearts - Nakupenda">
+                            <img src="assets/Two%20Hearts%20Love.png" alt="Happy Hearts Nakupenda">
                         </div>
                         <div class="product-info">
-                            <h4>Happy Hearts - Nakupenda</h4>
-                            <p class="product-desc">Perfect for: Sweethearts</p>
+                            <h4>Happy Hearts, Nakupenda</h4>
+                            <p class="product-desc">For sweethearts</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Happy Hearts - Nakupenda')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="assets/Me%20I%20Penda%20You.png" alt="Me I Penda You">
                         </div>
                         <div class="product-info">
                             <h4>Me I Penda You</h4>
-                            <p class="product-desc">Perfect for: The one you love, said the Kenyan way</p>
+                            <p class="product-desc">For the one you love, said exactly the Kenyan way</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Me I Penda You')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Self-Love Club">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Jipendelee">
                         </div>
                         <div class="product-info">
-                            <h4>Self-Love Club</h4>
-                            <p class="product-desc">Perfect for: Your healing journey</p>
+                            <h4>Jipendelee</h4>
+                            <p class="product-desc">For your healing journey. Love yourself first.</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('Self-Love Club')">Order Now</button>
+                                <button class="btn-order" onclick="orderWhatsApp('Jipendelee')">Order Now</button>
                             </div>
                         </div>
                     </div>
@@ -362,10 +571,9 @@
             <!-- INSPIRATION -->
             <div class="collection-group" data-collection="inspiration">
                 <div class="collection-intro">
-                    <h3>✨ Inspiration & Affirmations</h3>
-                    <p>Daily motivation for the grind. Career moves, mental health check-ins, growth mindset reminders.</p>
+                    <h3>✨ Inspiration &amp; Encouragement</h3>
+                    <p>For the hard Monday, the quiet struggle, the comeback in progress. Reminders chosen with intention rather than mass-produced, and that is exactly what makes them land differently.</p>
                 </div>
-
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -373,49 +581,46 @@
                         </div>
                         <div class="product-info">
                             <h4>You've Got This</h4>
-                            <p class="product-desc">Perfect for: Monday mornings & hard conversations</p>
+                            <p class="product-desc">For Monday mornings and hard conversations</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('You've Got This')">Order Now</button>
+                                <button class="btn-order" onclick="orderWhatsApp('You Got This')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Dream Builder">
                         </div>
                         <div class="product-info">
                             <h4>Dream Builder</h4>
-                            <p class="product-desc">Perfect for: The entrepreneur's hustle</p>
+                            <p class="product-desc">For the entrepreneur in the thick of it</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Dream Builder')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Rest Without Guilt">
                         </div>
                         <div class="product-info">
                             <h4>Rest Without Guilt</h4>
-                            <p class="product-desc">Perfect for: Permission to pause</p>
+                            <p class="product-desc">Permission to pause and mean it</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Rest Without Guilt')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Progress Over Perfection">
                         </div>
                         <div class="product-info">
                             <h4>Progress Over Perfection</h4>
-                            <p class="product-desc">Perfect for: The recovering perfectionist</p>
+                            <p class="product-desc">For the recovering perfectionist</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Progress Over Perfection')">Order Now</button>
@@ -428,10 +633,9 @@
             <!-- KENYAN CULTURE -->
             <div class="collection-group" data-collection="culture">
                 <div class="collection-intro">
-                    <h3>🇰🇪 Kenyan Culture & Humor</h3>
-                    <p>Sheng, matatu wisdom, chai culture, and inside jokes only Kenyans truly get.</p>
+                    <h3>🇰🇪 Kenyan Culture &amp; Humour</h3>
+                    <p>Sheng. Matatu wisdom. Chai culture. The jokes only those who truly know this country will understand. This collection is for the insiders and for welcoming others in.</p>
                 </div>
-
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -439,52 +643,113 @@
                         </div>
                         <div class="product-info">
                             <h4>Straight Outta Wueh!</h4>
-                            <p class="product-desc">Perfect for: Expressing depth of a previous situation</p>
+                            <p class="product-desc">For expressing the depth of a very Kenyan situation</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Straight Outta Wueh!')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="Poa Vibes Only">
                         </div>
                         <div class="product-info">
                             <h4>Poa Vibes Only</h4>
-                            <p class="product-desc">Perfect for: Keeping it chill, Kenyan style</p>
+                            <p class="product-desc">For keeping it easy, Kenyan style</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Poa Vibes Only')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=500&h=500&fit=crop" alt="Matatu Wisdom">
                         </div>
                         <div class="product-info">
                             <h4>Matatu Wisdom</h4>
-                            <p class="product-desc">Perfect for: Life lessons from the 14-seater</p>
+                            <p class="product-desc">Life lessons from the 14-seater</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
                                 <button class="btn-order" onclick="orderWhatsApp('Matatu Wisdom')">Order Now</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Hakuna Matata Vibes">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop" alt="Pole Pole">
                         </div>
                         <div class="product-info">
-                            <h4>Hakuna Matata Vibes</h4>
-                            <p class="product-desc">Perfect for: Stress-free living</p>
+                            <h4>Pole Pole</h4>
+                            <p class="product-desc">Because not everything needs to be done in a hurry</p>
                             <div class="product-meta">
                                 <span class="price">KES 1,500</span>
-                                <button class="btn-order" onclick="orderWhatsApp('Hakuna Matata Vibes')">Order Now</button>
+                                <button class="btn-order" onclick="orderWhatsApp('Pole Pole')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OUR LANGUAGES -->
+            <div class="collection-group" data-collection="language">
+                <div class="collection-intro">
+                    <h3>🗣️ Our Languages</h3>
+                    <p>Kenya has over 42 ethnic groups, each with a language carrying its own wisdom, humour, and warmth. This collection honours that. Each mug carries words from our languages, a small act of preservation in everyday life.</p>
+                    <span class="collection-note">A growing collection. More languages coming.</span>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/Nakupenda%20-%20Orange.png" alt="Nakupenda">
+                        </div>
+                        <div class="product-info">
+                            <h4>Nakupenda</h4>
+                            <p class="product-desc">Swahili for "I love you." The language that belongs to all of us.</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Nakupenda')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/Me%20I%20Penda%20You.png" alt="Me I Penda You">
+                        </div>
+                        <div class="product-info">
+                            <h4>Me I Penda You</h4>
+                            <p class="product-desc">Sheng. Because Kenyan love sounds like this.</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Me I Penda You')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Asante Sana">
+                        </div>
+                        <div class="product-info">
+                            <h4>Asante Sana</h4>
+                            <p class="product-desc">Swahili for "thank you, deeply." Said with the whole heart.</p>
+                            <div class="product-meta">
+                                <span class="price">KES 1,500</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Asante Sana')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=500&h=500&fit=crop" alt="More Languages Coming">
+                            <span class="badge">Soon</span>
+                        </div>
+                        <div class="product-info">
+                            <h4>More Languages Coming</h4>
+                            <p class="product-desc">Kikuyu, Luo, Kalenjin, Kamba, Luhya and more. Watch this space.</p>
+                            <div class="product-meta">
+                                <span class="price">Notify Me</span>
+                                <button class="btn-order" onclick="orderWhatsApp('Language Collection - Notify Me')">Notify Me</button>
                             </div>
                         </div>
                     </div>
@@ -493,10 +758,19 @@
 
             <!-- Bulk Orders CTA -->
             <div class="bulk-order-cta">
-                <h3>Need more than one?</h3>
-                <p>Corporate gifts, weddings, events? We've got you.<br>Bulk discounts available for 10+ mugs.</p>
-                <button class="btn btn-primary" onclick="orderWhatsApp('Bulk Order Inquiry')">Get Custom Quote</button>
+                <h3>Gifting? Events? Corporate orders?</h3>
+                <p>Weddings, corporate gifts, team events, diaspora care packages. Bulk discounts available for 10 or more mugs. Custom messages available on request.</p>
+                <button class="btn btn-primary" onclick="orderWhatsApp('Bulk Order Inquiry')">Get a Custom Quote</button>
             </div>
+        </div>
+    </section>
+
+    <!-- Diaspora Band -->
+    <section class="diaspora-band">
+        <div class="container">
+            <h2>For those carrying Kenya with them</h2>
+            <p>Whether you are in London, Toronto, Atlanta, or Dubai, a piece of home fits in your cupboard. Our mugs were designed with you in mind too: a daily reminder of where you come from and everything that made you.</p>
+            <a href="#contact" class="btn btn-secondary">Order &amp; Ship Abroad</a>
         </div>
     </section>
 
@@ -505,35 +779,73 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="" alt="Anne - Founder">
+                    <img src="" alt="Anne, Founder of Kenyan Feels">
                 </div>
-
                 <div class="about-content">
                     <span class="section-tag">Our Story</span>
-                    <h2 class="section-title">Why Every Mug Matters</h2>
-                    
+                    <h2 class="section-title">Made by us.<br>For all of us.</h2>
                     <div class="about-text">
-                        <p>In a world that constantly tells you to hustle harder, we're here to remind you: <strong>you're already enough.</strong></p>
-
-                        <p>I'm Anne. After years in school operations—building systems, understanding people, creating environments that work—I realized my heart was pulling me somewhere else. Toward creating. Toward design. Toward pieces that speak to the soul.</p>
-
-                        <p>Kenyan Feels started with a simple question: <em>What if the mug you drink from every morning could change your day?</em></p>
-
-                        <p>These aren't just mugs. They're daily affirmations in your hand. Kenyan pride on your desk. Conversation starters over chai. Reminders that you matter.</p>
-
-                        <p>Every design is original. Every mug is made in Nairobi. Every purchase supports a creative ecosystem that believes Kenya has stories worth telling.</p>
-
-                        <p>Whether you're buying for yourself or gifting someone who needs to hear they're loved, valued, or simply enough—welcome to Kenyan Feels.</p>
-
-                        <p><strong>Let's make your everyday a little more extraordinary.</strong></p>
+                        <p>There is a pattern that has played out for too long. Someone from outside comes to Kenya, sees something extraordinary about us, our humour, our languages, our warmth, our way of looking at the world, and either takes it, or is the first to tell us it is special.</p>
+                        <p>Kenyan Feels was created to disrupt that pattern. We name what is ours. We design it. We celebrate it.</p>
+                        <p>These mugs carry messages shaped by our worldview, not imported positivity or borrowed narratives. Real encouragement, real humour, real love. The kind that sounds like home.</p>
+                        <div class="about-pillars">
+                            <div class="pillar">
+                                <h4>Our Languages</h4>
+                                <p>Kenya's 42+ ethnic languages are living heritage. Our designs are one small way to keep them visible and valued.</p>
+                            </div>
+                            <div class="pillar">
+                                <h4>Our Messages</h4>
+                                <p>Positive, grounding, and aligned with how we actually see the world. Not borrowed from elsewhere.</p>
+                            </div>
+                            <div class="pillar">
+                                <h4>Our Diaspora</h4>
+                                <p>For those living abroad: a tangible piece of home that sits on your desk every morning.</p>
+                            </div>
+                            <div class="pillar">
+                                <h4>Our Standard</h4>
+                                <p>Designed in Nairobi. Every purchase supports a Kenyan creative ecosystem we are building together.</p>
+                            </div>
+                        </div>
+                        <p>This is not just about mugs. It is about reclaiming the right to define ourselves, and making that definition beautiful enough to drink from every day.</p>
                     </div>
-
                     <div class="about-signature">
                         <p class="signature-name">Anne</p>
-                        <p class="signature-title">Founder & Creative Director, Nairobi</p>
+                        <p class="signature-title">Founder &amp; Creative Director, Kenyan Feels &middot; Nairobi</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Pop-Up Markets Section -->
+    <section id="popups" class="popups-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Find Us in Person</span>
+                <h2 class="section-title">Pop-Up Markets &amp; Events</h2>
+                <p class="section-subtitle">Come find us, hold a mug, feel the difference in person. No screen can do that.</p>
+            </div>
+
+            <!--
+                TO UPDATE: Replace the no-popups block below with the popup-list
+                block when you have confirmed market dates. Example:
+
+                <div class="popup-list">
+                    <div class="popup-card">
+                        <p class="popup-date">Saturday, 17 May 2026</p>
+                        <h3>Nairobi Design Market</h3>
+                        <p class="popup-location">Village Market, Gigiri, Nairobi</p>
+                        <p class="popup-time">9:00 AM to 5:00 PM</p>
+                    </div>
+                </div>
+            -->
+
+            <div class="no-popups">
+                <p class="coming-soon">Next markets coming soon</p>
+                <p>Follow us on Instagram <a href="https://instagram.com/kenyanfeels" target="_blank">@kenyanfeels</a> to be the first to know where we will be next. We always announce at least a week in advance.</p>
+            </div>
+
+            <p class="popup-cta-note">Want to invite Kenyan Feels to your event or market? <a href="https://wa.me/254729?text=Hi%20Kenyan%20Feels!%20I'd%20like%20to%20invite%20you%20to%20an%20event" target="_blank">Reach out on WhatsApp</a></p>
         </div>
     </section>
 
@@ -541,75 +853,78 @@
     <section id="contact" class="order-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Let's Make It Yours</span>
-                <h2 class="section-title">Ordering is Simple</h2>
-                <p class="section-subtitle">Because life's complicated enough</p>
+                <span class="section-tag">Order Simply</span>
+                <h2 class="section-title">Getting yours is easy</h2>
+                <p class="section-subtitle">Because life is complicated enough already</p>
             </div>
-
             <div class="order-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Choose Your Design</h3>
-                    <p>Click "Order Now" on any design above</p>
+                    <p>Pick a collection, find the message, and choose enamel or ceramic</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Confirm Details</h3>
-                    <p>We'll chat via WhatsApp</p>
+                    <h3>Confirm on WhatsApp</h3>
+                    <p>We chat, confirm details, and confirm your mug type</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Pay Securely</h3>
-                    <p>M-Pesa or bank transfer</p>
+                    <h3>Pay via M-Pesa</h3>
+                    <p>Simple, familiar, and secure</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Receive & Enjoy</h3>
-                    <p>Arrives in 3-5 business days</p>
+                    <h3>Receive &amp; Enjoy</h3>
+                    <p>Delivered in 3 to 5 business days nationwide</p>
                 </div>
             </div>
-
             <div class="contact-info">
                 <div class="contact-card">
                     <div class="contact-icon">📱</div>
                     <h3>WhatsApp</h3>
-                    <p class="contact-detail">+254 729 </p>
-                    <a href="https://wa.me/254729?text=Hi%20Kenyan%20Feels!%20I'm%20interested%20in%20ordering" class="contact-link" target="_blank">Start Your Order →</a>
+                    <p class="contact-detail">+254 729 ___</p>
+                    <a href="https://wa.me/254729?text=Hi%20Kenyan%20Feels!%20I'm%20interested%20in%20ordering" class="contact-link" target="_blank">Start Your Order</a>
                 </div>
-
                 <div class="contact-card">
                     <div class="contact-icon">📧</div>
                     <h3>Email</h3>
                     <p class="contact-detail">hello@kenyanfeels.com</p>
-                    <a href="mailto:hello@kenyanfeels.com" class="contact-link">Send Message →</a>
+                    <a href="mailto:hello@kenyanfeels.com" class="contact-link">Send a Message</a>
                 </div>
-
                 <div class="contact-card">
                     <div class="contact-icon">📍</div>
                     <h3>Location</h3>
                     <p class="contact-detail">Nairobi, Kenya</p>
-                    <p class="contact-link">Delivering Good Vibes Nationwide</p>
+                    <p class="contact-link">Delivering nationwide</p>
                 </div>
             </div>
-
             <div class="delivery-info-box">
                 <h3>Delivery Information</h3>
                 <div class="delivery-grid">
                     <div class="delivery-item">
                         <span class="check">✓</span>
-                        <p><strong>Nairobi:</strong> 2-3 business days (KES 250)</p>
+                        <p><strong>Nairobi:</strong> 2 to 3 business days (KES 250)</p>
                     </div>
                     <div class="delivery-item">
                         <span class="check">✓</span>
-                        <p><strong>Major Towns:</strong> 3-5 business days (KES 350)</p>
+                        <p><strong>Major Towns:</strong> 3 to 5 business days (KES 350)</p>
                     </div>
                     <div class="delivery-item">
                         <span class="check">✓</span>
-                        <p><strong>Free Delivery:</strong> On 3+ mugs (Nairobi only)</p>
+                        <p><strong>Free Delivery:</strong> On orders of 3 or more mugs within Nairobi</p>
                     </div>
                     <div class="delivery-item">
                         <span class="check">✓</span>
-                        <p><strong>Quality Guarantee:</strong> Damaged? We replace immediately</p>
+                        <p><strong>Quality Guarantee:</strong> Damaged on arrival? We replace immediately.</p>
+                    </div>
+                    <div class="delivery-item">
+                        <span class="check">✓</span>
+                        <p><strong>Diaspora Orders:</strong> International shipping available. Ask us for rates.</p>
+                    </div>
+                    <div class="delivery-item">
+                        <span class="check">✓</span>
+                        <p><strong>Payment:</strong> M-Pesa or bank transfer</p>
                     </div>
                 </div>
             </div>
@@ -619,24 +934,22 @@
     <!-- Instagram Section -->
     <section class="instagram-section">
         <div class="container">
-            <h2>Follow Us on Instagram</h2>
-            <p class="instagram-subtitle">See our mugs in real life & customer love</p>
-            
+            <h2>See them in real life</h2>
+            <p class="instagram-subtitle">Follow along on Instagram for new designs, customer love, and Kenyan Feels moments</p>
             <div class="instagram-grid">
                 <div class="instagram-post">
-                    <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Instagram">
+                    <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" alt="Instagram post">
                 </div>
                 <div class="instagram-post">
-                    <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=400&h=400&fit=crop" alt="Instagram">
+                    <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?w=400&h=400&fit=crop" alt="Instagram post">
                 </div>
                 <div class="instagram-post">
-                    <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=400&h=400&fit=crop" alt="Instagram">
+                    <img src="https://images.unsplash.com/photo-1565265746376-c8984f98bf67?w=400&h=400&fit=crop" alt="Instagram post">
                 </div>
                 <div class="instagram-post">
-                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop" alt="Instagram">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop" alt="Instagram post">
                 </div>
             </div>
-
             <a href="https://instagram.com/kenyanfeels" class="btn btn-secondary instagram-btn" target="_blank">Follow @kenyanfeels</a>
         </div>
     </section>
@@ -646,12 +959,12 @@
         <div class="container">
             <div class="newsletter-content">
                 <h2>Join the Circle</h2>
-                <p>Be first to see new designs & seasonal drops</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Join Now</button>
-                </form>
-                <p class="newsletter-note">We respect your inbox. No spam, just good vibes.</p>
+                <p>Be first to see new designs, seasonal drops, and pop-up market dates</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="button" onclick="handleNewsletter(this)">Join Now</button>
+                </div>
+                <p class="newsletter-note">We respect your inbox. Good vibes only, no spam.</p>
             </div>
         </div>
     </section>
@@ -663,47 +976,96 @@
                 <div class="footer-col">
                     <h3>KENYAN FEELS</h3>
                     <p class="footer-tagline">Kenya ni Home</p>
-                    <p>Enamel mugs that inspire, encourage, and remind you you're exactly where you need to be.</p>
-                    <p class="footer-made">Made with ❤️ in Nairobi</p>
+                    <p>Enamel and ceramic mugs carrying Kenyan stories, languages, and soul. Designed in Nairobi, made for everywhere.</p>
+                    <p class="footer-made">Made with &#10084;&#65039; in Nairobi</p>
                 </div>
-
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#shop">Shop</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#popups">Events</a></li>
+                        <li><a href="#about">Our Story</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4>Collections</h4>
                     <ul>
-                        <li><a href="#shop">Seasonal</a></li>
-                        <li><a href="#shop">Faith & Spirituality</a></li>
+                        <li><a href="#shop">Faith &amp; Spirituality</a></li>
                         <li><a href="#shop">Destination Kenya</a></li>
+                        <li><a href="#shop">Our Languages</a></li>
                         <li><a href="#shop">Inspiration</a></li>
+                        <li><a href="#shop">Kenyan Culture</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4>Connect</h4>
                     <ul>
                         <li><a href="https://instagram.com/kenyanfeels" target="_blank">Instagram</a></li>
-                        <li><a href="https://wa.me/25472" target="_blank">WhatsApp</a></li>
+                        <li><a href="https://wa.me/254729" target="_blank">WhatsApp</a></li>
                         <li><a href="mailto:hello@kenyanfeels.com">Email</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2026 Kenyan Feels. All rights reserved.</p>
-                <p class="footer-note">Every mug tells a story. What will yours say?</p>
+                <p class="footer-note">Our culture. Our words. Our mugs.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function orderWhatsApp(product) {
+            var phone = '254729';
+            var msg = encodeURIComponent('Hi Kenyan Feels! I\'d like to order: ' + product + '. Please let me know the next steps.');
+            window.open('https://wa.me/' + phone + '?text=' + msg, '_blank');
+        }
+
+        var tabs = document.querySelectorAll('.tab-btn');
+        var groups = document.querySelectorAll('.collection-group');
+
+        function showCollection(collection) {
+            groups.forEach(function(g) {
+                if (collection === 'all' || g.dataset.collection === collection) {
+                    g.classList.add('visible');
+                } else {
+                    g.classList.remove('visible');
+                }
+            });
+        }
+        showCollection('all');
+
+        tabs.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                tabs.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                showCollection(btn.dataset.collection);
+            });
+        });
+
+        document.querySelectorAll('.mug-type-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.mug-type-card').forEach(function(c) { c.classList.remove('active'); });
+                card.classList.add('active');
+            });
+        });
+
+        function handleNewsletter(btn) {
+            var input = btn.previousElementSibling;
+            if (input && input.value) {
+                alert('Asante! You\'re on the list. 🇰🇪');
+                input.value = '';
+            }
+        }
+
+        var hamburger = document.querySelector('.hamburger');
+        var navLinks = document.querySelector('.nav-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
